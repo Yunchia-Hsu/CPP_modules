@@ -1,2 +1,2 @@
 # CPP_modules
-42 | Exercises to learn about basics of C++ 
+42 C++ projects: to learn basics of C++ 
