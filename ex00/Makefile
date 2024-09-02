@@ -6,7 +6,7 @@
 #    By: yhsu <student.hive.fi>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 10:03:46 by yhsu              #+#    #+#              #
-#    Updated: 2024/08/28 14:53:50 by yhsu             ###   ########.fr        #
+#    Updated: 2024/09/02 15:52:35 by yhsu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,20 @@ OBJS = $(SRC:.cpp=.o)
 
 FLAGS := -Wall -Werror -Wextra -std=c++11
 
+COMPILER := c++
+
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(COMPILER) -o $(NAME) $(OBJS)
+
+%.o: %.cpp
+	$(COMPILER) -o $(FLAGS) -c $< -o $@
 
 clean:
 		rm -f $(OBJS)
 
-fclean:
+fclean: clean
 		rm -f $(NAME)
 
 re: fclean $(NAME)
