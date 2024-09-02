@@ -18,21 +18,26 @@ OBJS = $(SRC:.cpp=.o)
 
 FLAGS := -Wall -Werror -Wextra -std=c++11
 
+BLUE = \033[0;34m
+GREEN = \033[0;32m
+END = \033[0m
+
 COMPILER := c++
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(COMPILER) -o $(NAME) $(OBJS)
-
+	@$(COMPILER) -o $(NAME) $(OBJS)
+	@echo "$(GREEN) $(NAME) created ✅ $(END)"
 %.o: %.cpp
-	$(COMPILER) -o $(FLAGS) -c $< -o $@
+	@$(COMPILER) -o $(FLAGS) -c $< -o $@ 
 
 clean:
-		rm -f $(OBJS)
+		@rm -f $(OBJS)
 
 fclean: clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
+		@echo "$(BLUE) $(NAME) removed $(END)"
 
 re: fclean $(NAME)
 
