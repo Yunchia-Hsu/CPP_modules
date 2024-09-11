@@ -25,7 +25,18 @@ class Contact
 		std::string phoneNumber;
 		std::string nickName;
 		std::string darkSecret;
-	public:
+	 public:
+
+        Contact();
+        ~Contact();
+        int get_index(void) const;
+        std::string get_firstname(void) const;
+        std::string get_lastname(void) const;
+        std::string get_phonenumber(void) const;
+        std::string get_darksecret();
+        void init (int index);
+        void display (void) const;
+        void view(void) const;
 		
 };
 
