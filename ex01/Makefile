@@ -6,14 +6,15 @@
 #    By: yhsu <student.hive.fi>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 16:52:19 by yhsu              #+#    #+#              #
-#    Updated: 2024/09/02 16:52:55 by yhsu             ###   ########.fr        #
+#    Updated: 2024/09/12 16:14:29 by yhsu             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME := phonebook
 
-SRC := Phonebook.cpp\
+SRC := PhoneBook.cpp\
 		Contact.cpp\
+		main.cpp
 
 OBJS := $(SRC:.cpp=.o)
 
@@ -28,11 +29,11 @@ COMPILER := c++
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(COMPILER) -o $(NAME) $(OBJS)
+	@$(COMPILER) $(FLAGS) $(OBJS) -o $(NAME) 
 	@echo "$(GREEN) $(NAME) created ✅ $(END)"
 
 %.o: %.cpp
-	@$(COMPILER) -o $(FLAGS) -c $< -o $@
+	@$(COMPILER) $(FLAGS) -c $< -o $@
 
 clean:
 	@rm -f $(OBJS)

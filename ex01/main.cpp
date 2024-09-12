@@ -7,36 +7,44 @@ void    input_read_fail()
         std::cout << "EOF signal received. " << std::endl;
     else
         std::cout << "Error reading input." << std::endl;
-    exit (1);
+    exit (0);
 }
 
 int main(int argc, char **argv)
 {
-    int len;
+    //int len;
     std::string command;
     Phonebook pb;
     
-    if (argc != 1)
+    if (argc <= 1)
         std::cout << "invalid number of arguments" << std::endl;
-    //
+    else	
+		command = argv[1];
     
-    //std::cout << "Thanks for using the PhoneBook" << std::endl;
     while (1)
     {
         std::cout << "\nPHONEBOOK:" << std::endl;
-        std::cout << "Please enter a command: ADD, SEARCH or EXIT" << std::endl;
+        if (command.empty())
+		{
+			std::cout << "Please enter a command: ADD, SEARCH or EXIT" << std::endl;
         if (!std::getline(std::cin, command))
             input_read_fail();
+		}
+		
         if (command == "ADD")
             pb.add_contact();
-            //std::cout<< "ADD\n";
-        else if (command == "SEARCH\n")
-            pb.search_contact();
-            //std::cout<< "SEARCH";
+        else if (command == "SEARCH")
+		{
+			if (pb.display_contacts())
+				pb.search_contact();
+		}	
         else if (command == "EXIT")
             break;
         else    
             std::cout << command <<" is an invalid command, please try again " << std::endl; 
-    }
+		command = "";
+		std::cout << "Thanks for using the PhoneBook" << std::endl;
+	}
+	
     return 0;
 }
