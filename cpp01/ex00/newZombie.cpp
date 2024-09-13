@@ -6,9 +6,10 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 18:09:28 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/13 18:31:14 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/13 18:55:21 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+
 Zombie* newZombie( std::string name );

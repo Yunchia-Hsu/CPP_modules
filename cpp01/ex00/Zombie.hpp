@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:56:34 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/13 18:04:57 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/13 18:49:56 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@
 class Zombie
 {
 	private:
-		std::string name;//Foo: BraiiiiiiinnnzzzZ...
+		std::string _name;//Foo: BraiiiiiiinnnzzzZ...
 	public:
 
-		Zombie();
-		~Zombie()
-		{
-			std::cout << Zombie has been destroyed << std::endl;
-		}
+		Zombie(std::string _name);
+		~Zombie();
+		
+		void set_name(std::string name);
+		const std::string get_name(void) const;
 		void announce( void ); 
 		
-		Zombie* newZombie( std::string name );
-		void randomChump( std::string name );
+		
 }
+
+Zombie* newZombie( std::string name );
+void randomChump( std::string name );
 
 #endif
