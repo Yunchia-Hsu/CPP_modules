@@ -6,10 +6,9 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 12:28:30 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/13 12:50:06 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/13 15:50:35 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "PhoneBook.hpp"
 //default destructor
@@ -39,8 +38,8 @@ void Phonebook::search_contact(void)
 	int index = -1;
 	int valid = 0;
 
-	while(valid == 1)
-	{
+	std::cin.clear();	
+	do{
 		std::cout << "Please enter the contact's index: " << std::flush;
 		std::cin >> index;
 		if (std::cin.eof())
@@ -48,17 +47,16 @@ void Phonebook::search_contact(void)
 			std::cout << "EOF signal received. " << std::endl;
 			exit (0);
 		}
-			
-		if (std::cin.good() && ( index >= 0 && index < 8 ))
+		if (std::cin.good() && (index >= 0 && index < 8))
 			valid = 1;
 		else
 		{
 			std::cin.clear();
-			//std::cin.ignore( std::numeric_limits<std::streamsize > :: max(), '\n');
+			std::cin.ignore( std::numeric_limits<std::streamsize > :: max(), '\n');
 			std::cout << "Index should be between 0 ~ 7, please try again. " << std::endl;
 		}
-	}	
-	//std::cin.ignore( std::numeric_limits<std::streamsize > :: max(), '\n');
+	}while(valid!= 1);
+	std::cin.ignore( std::numeric_limits<std::streamsize > :: max(), '\n');
 	std::cout<<std::endl;
 	this->contact[index].view();
 }

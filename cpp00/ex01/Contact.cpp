@@ -6,11 +6,12 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 09:53:44 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/13 13:16:19 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/13 15:49:42 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+#include <cstdlib>
 
 Contact::~Contact()
 {	
@@ -74,43 +75,50 @@ static std::string read_value(std::string value)
 		}	
 
 	}
-	
-		
 	return (line);
 }
 
 void Contact::add_new_contact(int index)
 {
-	std::cout << "You are ready to add a new contact to index "<< index <<std::endl;
+	std::cout << "You are ready to add a new contact to index-> "<< index <<std::endl;
 	std::cout << "Please fill in the following information: \n" << std::flush;
 	this->firstName = read_value("first name: ");
 	this->lastName = read_value("last name: ");
 	this->phoneNumber = read_value("phone name: ");
 	this->nickName = read_value("nick name: ");
 	this->darkSecret = read_value("the darkest secret: ");
-	std::cout << "The new contact added successfully." << std::endl;
+	std::cout << "-----The new contact added successfully.-----" << std::endl;
 }
 
 void Contact::view(void)
 {
-	std::cout<< "view---------\n";
 	if (this->index == -1)
 	{
 		std::cout << "no contact under the index!" << std::endl;
 		return;
 	}
-	std::cout << "CONTACT No."<< this->index << std::endl;
+	std::cout << "CONTACT no."<< this->index << std::endl;
 	std::cout << "First name: "<< this->firstName << std::endl;
 	std::cout << "Last name: "<< this->lastName <<  std::endl;
 	std::cout << "Phone number: "<< this->phoneNumber  << std::endl;
 	std::cout << "Nick name: "<< this->nickName  << std::endl;
-	std::cout << "The darkest secret: "<< this->darkSecret << std::endl;
-	
+	std::cout << "The darkest secret: "<< this->darkSecret << "\n" << std::endl;
 }
- void Contact::display (void) const
- {
-	std::cout<< "dispay---------\n" ;
-	std::cout<< "|" <<std::setw(10)<< this->index << std::flush;
-	std::cout << "|" << std::setw(10)  << std::flush;
- }
+
+static std::string checklen(std::string output)
+{
+	if (output.length() > 10)
+		return (output.substr(0,9) + '.');
+
+	return (output);
+}
+
+
+void Contact::display (void) const
+{
+	std::cout << "|" <<std::setw(10) << this->index << std::flush;
+	std::cout << "|" << std::setw(10) << checklen(this->firstName) << std::flush;
+	std::cout << "|" << std::setw(10) << checklen(this->lastName) << std::flush;
+	std::cout << "|" << std::setw(10) << checklen(this->nickName) << std::endl;
+}
 

@@ -35,8 +35,8 @@ int main(int argc, char **argv)
             pb.add_contact();
         else if (command == "SEARCH")
 		{
-			if (pb.display_contacts())
-				pb.search_contact();
+			if (pb.display_contacts() == 1)
+				pb.search_contact();	
 		}	
         else if (command == "EXIT")
             break;
