@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 09:53:44 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/12 17:18:20 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/13 13:16:19 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,20 +93,24 @@ void Contact::add_new_contact(int index)
 
 void Contact::view(void)
 {
+	std::cout<< "view---------\n";
 	if (this->index == -1)
 	{
 		std::cout << "no contact under the index!" << std::endl;
 		return;
 	}
+	std::cout << "CONTACT No."<< this->index << std::endl;
 	std::cout << "First name: "<< this->firstName << std::endl;
-	std::cout << "Last name: "<< this->lastName << std::endl;
-	std::cout << "Phone number: "<< this->phoneNumber << std::endl;
-	std::cout << "Nick name: "<< this->nickName << std::endl;
+	std::cout << "Last name: "<< this->lastName <<  std::endl;
+	std::cout << "Phone number: "<< this->phoneNumber  << std::endl;
+	std::cout << "Nick name: "<< this->nickName  << std::endl;
 	std::cout << "The darkest secret: "<< this->darkSecret << std::endl;
 	
 }
- void display (void) const
+ void Contact::display (void) const
  {
-	
+	std::cout<< "dispay---------\n" ;
+	std::cout<< "|" <<std::setw(10)<< this->index << std::flush;
+	std::cout << "|" << std::setw(10)  << std::flush;
  }
 

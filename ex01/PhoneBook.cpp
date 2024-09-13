@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/12 12:28:30 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/12 17:36:07 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/13 12:50:06 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ void Phonebook::search_contact(void)
 		else
 		{
 			std::cin.clear();
-			std::cin.ignore( std::numeric_limits<std::streamsize > :: max(), '\n');
+			//std::cin.ignore( std::numeric_limits<std::streamsize > :: max(), '\n');
 			std::cout << "Index should be between 0 ~ 7, please try again. " << std::endl;
 		}
 	}	
-	std::cin.ignore( std::numeric_limits<std::streamsize > :: max(), '\n');
+	//std::cin.ignore( std::numeric_limits<std::streamsize > :: max(), '\n');
 	std::cout<<std::endl;
 	this->contact[index].view();
 }
@@ -68,7 +68,7 @@ int Phonebook::display_contacts(void)
 	int i = 0;
 	while (i < 8)
 	{
-		if (this->contact[i].get_index() = -1)
+		if (this->contact[i].get_index() == -1)
 		{
 			if (i == 0)
 			{
