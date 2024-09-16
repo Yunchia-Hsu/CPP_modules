@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 09:53:44 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/13 15:49:42 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/16 17:36:21 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void Contact::add_new_contact(int index)
 	std::cout << "Please fill in the following information: \n" << std::flush;
 	this->firstName = read_value("first name: ");
 	this->lastName = read_value("last name: ");
-	this->phoneNumber = read_value("phone name: ");
+	this->phoneNumber = read_value("phone number: ");
 	this->nickName = read_value("nick name: ");
 	this->darkSecret = read_value("the darkest secret: ");
 	std::cout << "-----The new contact added successfully.-----" << std::endl;

@@ -12,7 +12,7 @@ void    input_read_fail()
 
 int main(int argc, char **argv)
 {
-    //int len;
+
     std::string command;
     Phonebook pb;
     

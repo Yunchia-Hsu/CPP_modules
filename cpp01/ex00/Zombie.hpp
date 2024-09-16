@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 16:56:34 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/13 18:49:56 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/16 18:41:23 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
+#include <string>
+
+
 
 class Zombie
 {
@@ -21,17 +24,16 @@ class Zombie
 		std::string _name;//Foo: BraiiiiiiinnnzzzZ...
 	public:
 
-		Zombie(std::string _name);
-		~Zombie();
+		Zombie(std::string name);//constructor
+		~Zombie();//destructor
 		
 		void set_name(std::string name);
 		const std::string get_name(void) const;
-		void announce( void ); 
-		
-		
-}
+		void announce(void); 
+			
+};
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+Zombie* newZombie( std::string name );//create zombie in heap
+void randomChump( std::string name );//create zonbie in stack
 
 #endif
