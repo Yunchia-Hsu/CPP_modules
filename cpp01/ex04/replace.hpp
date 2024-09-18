@@ -20,12 +20,19 @@
 class FileReplacer
 {
 	private:
+		std::string filename;
+		std::string s1;
+		std::string s2;
 		
-
+		std::string readFile(std::string filename);
+		int writeFile(const std::string &content); ?? why &?
 	
 
 	public:
-		replace(std::string filename, std::string &s1, std::string &s2);
+
+		FileReplacer(const std::string filename, const std::string &s1, const std::string &s2);
+		~FileReplacer();
+		int replace();
 	
 };
 

@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include "replace.hpp"
-#include <iostream>
 
-int main (int argc, char *argv)
+
+int main (int argc, char **argv)
 {
 	if (argc != 4)
 	{
@@ -27,7 +27,8 @@ int main (int argc, char *argv)
 		std::string s1 = argv[2];
 		std::string s2 = argv[3];
 		FileReplacer replacer(filename, &s1, &s2);
-		if (replacer.replace == 1)
+		//	FileReplacer replacer(argv[1], argv[2], argv[3]);
+		if (replacer.replace() == 1)
 			return 1;
 	}
 	return 0;

@@ -1,4 +1,4 @@
-NAME := zombie04
+NAME := sed
 
 SRC := main.cpp\
 		replace.cpp
