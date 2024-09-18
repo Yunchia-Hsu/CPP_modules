@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 09:51:05 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/18 09:51:06 by yhsu             ###   ########.fr       */
+/*   Created: 2024/09/18 12:42:17 by yhsu              #+#    #+#             */
+/*   Updated: 2024/09/18 17:23:20 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "HumanA.hpp"
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
 
-#include <iostream>
-#include <string>
-
-class Zombie
+HumanA::HumanA(std::string name, Weapon &weapon) : name(name) , weapon(weapon)
 {
-    private:
-        std::string _name;
+}
 
-    public:
-        Zombie();
-        ~Zombie();
-        void set_name(std::string name);
-        std::string get_name();
-        void announce(void);
-};
+HumanA::~HumanA()
+{	
+}
 
-Zombie* zombieHorde( int N, std::string name );
-
-#endif
+void HumanA::attack()//<name> attacks with their <weapon type>
+{
+	if (this->weapon.getType().empty())
+		{
+			std::cout << "Enter a weapon to attack" <<std::endl;
+		}
+	else
+		std::cout << this->name << " attacks with their " 
+			<<this->weapon.getType() << std::endl;
+}
