@@ -18,16 +18,16 @@ int main (int argc, char **argv)
 	if (argc != 4)
 	{
 		std::cout << "Invalid input" << std::endl;
-		std::cout << "Please enter <filename> <string-to-replace> <string-to-be-replaced>" << std::endl;
+		std::cout << "Please enter <filename> <string to replace> <string to be replaced>" << std::endl;
 		return 1;
 	}
 	else
 	{
-		std::string filename = argv[1];
-		std::string s1 = argv[2];
-		std::string s2 = argv[3];
-		FileReplacer replacer(filename, &s1, &s2);
-		//	FileReplacer replacer(argv[1], argv[2], argv[3]);
+		//std::string filename = argv[1];
+		//std::string s1 = argv[2];
+		//std::string s2 = argv[3];
+		//FileReplacer replacer(filename, s1, s2);
+		FileReplacer replacer(argv[1], argv[2], argv[3]);
 		if (replacer.replace() == 1)
 			return 1;
 	}

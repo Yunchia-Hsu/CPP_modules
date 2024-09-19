@@ -14,9 +14,9 @@
 # define REPLACE_H
 
 #include <iostream>
-//#include <>
-
-
+#include <fstream>
+#include <sstream> // std::stingstream
+#include <string>
 class FileReplacer
 {
 	private:
@@ -24,13 +24,13 @@ class FileReplacer
 		std::string s1;
 		std::string s2;
 		
-		std::string readFile(std::string filename);
-		int writeFile(const std::string &content); ?? why &?
+		std::string readFile();
+		int writeFile(const std::string &content); //?? why &?
 	
 
 	public:
 
-		FileReplacer(const std::string filename, const std::string &s1, const std::string &s2);
+		FileReplacer(const std::string &filename, const std::string &s1, const std::string &s2);
 		~FileReplacer();
 		int replace();
 	

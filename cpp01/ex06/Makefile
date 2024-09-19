@@ -1,7 +1,8 @@
-NAME := sed
+
+NAME := harlFilter
 
 SRC := main.cpp\
-		replace.cpp
+		Harl.cpp
 			
 OBJS := $(SRC:.cpp=.o)
 
