@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/20 10:58:26 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/20 10:58:27 by yhsu             ###   ########.fr       */
+/*   Created: 2024/09/20 12:42:46 by yhsu              #+#    #+#             */
+/*   Updated: 2024/09/20 15:53:25 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Fixed.hpp"
 
-#ifndef HARL_HPP
-# define HARL_HPP
-#include <iostream>
-
-class Harl
+int main( void ) 
 {
-    private:
-        void debug( void );
-        void info( void );
-        void warning( void );
-        void error( void );
+	Fixed a;//default constructor
 
-    public:
-        void complain( std::string level );
-};
-int getLevel(std::string line);
-typedef void (Harl::*c_func)(void);
-#endif
+	Fixed b( a );// copy constructor
+	
+	Fixed c;
+	c = b;
+	
+	std::cout << a.getRawBits() << std::endl;
+	
+	std::cout << b.getRawBits() << std::endl;
+
+	std::cout << c.getRawBits() << std::endl;
+	
+	return 0;
+}
