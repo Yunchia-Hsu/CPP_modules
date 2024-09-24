@@ -21,11 +21,12 @@ class Fixed
 {
 	private:
 		int _fixedPointValue;
-		static const int _gractionalBits = 8; 
+		static const int _fractionalBits = 8; 
 
 	public:
 		Fixed();
-		Fixed(const int inValue); //initializes the fixed-point number value to 0.
+		Fixed(const int value); //initializes the fixed-point number value to 0.
+		Fixed(const float value);
 		~Fixed();
 
 		Fixed(const Fixed &other);//copy constructor
@@ -35,9 +36,9 @@ class Fixed
 		void setRawBits( int const raw );
 		float toFloat( void ) const;//converts the fixed-point value to a floating-point value.
 		int toInt( void ) const;// converts the fixed-point value to an integer value.
-		bool operator> ();
+		
 };
 
-ostream& operator<<(ostream &stream, coonst Fixed &nbr);
+std::ostream& operator<<(std::ostream &stream, const Fixed &nbr);
 
 #endif

@@ -19,7 +19,7 @@ class Fixed
 {
 	private:
 		int _fixedPointValue;
-		static const int _gractionalBits = 8; 
+		static const int _fractionalBits = 8; 
 
 	public:
 		Fixed(); //initializes the fixed-point number value to 0.
