@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:32:40 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/18 17:32:41 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/25 15:53:33 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,9 @@ int FileReplacer::replace()
     std::string new_content;
     while(1)
     {
-        find_pos = content.find(s1, current_pos);
+        if (s1 == "")
+			break;
+		find_pos = content.find(s1, current_pos);
         if (find_pos == std::string::npos)
             break;
         new_content.append(content, current_pos, find_pos - current_pos );
