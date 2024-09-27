@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 12:07:05 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/27 12:46:01 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/27 17:44:53 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string _name;
 		unsigned int _hitpoint;//10
 		unsigned int _attackdamage;//0
@@ -25,11 +25,11 @@ class ClapTrap
 	public:
 	ClapTrap();
 	ClapTrap(const std::string& _name);
-	~ClapTrap();
+	virtual ~ClapTrap();//  can be overrided by the function in derived class with virtual
 	ClapTrap(const ClapTrap& other);
 	ClapTrap& operator=(const ClapTrap& other);
 	
-	void attack(const std::string& target);
+	virtual void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	
