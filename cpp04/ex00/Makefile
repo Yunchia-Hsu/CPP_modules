@@ -1,9 +1,11 @@
-NAME := Polymorphism
+NAME := animal00
 
 SRC := main.cpp\
 		Cat.cpp\
 		Animal.cpp\
-		Dog.cpp
+		Dog.cpp\
+		WrongCat.cpp\
+		WrongAnimal.cpp
 		
 OBJS := $(SRC:.cpp=.o)
 

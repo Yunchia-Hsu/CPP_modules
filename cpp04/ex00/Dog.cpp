@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/30 13:39:24 by yhsu              #+#    #+#             */
+/*   Updated: 2024/09/30 14:30:55 by yhsu             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Dog.hpp"
 
@@ -10,7 +22,7 @@ Dog::Dog()
 // {
 //     std::cout  << _type <<" constructor called. " << std::endl;
 // }
-Dog::Dog (const Dog& other):_type("Dog")
+Dog::Dog (const Dog& other)
 {
     std::cout << "Cat copy constructor called. " << std::endl;
     *this = other;
@@ -23,14 +35,11 @@ Dog& Dog::operator = (const Dog& other)
     this->_type = other._type;
     return *this;
 }
-void Dog::makeSound()
+void Dog::makeSound() const
 {
    std::cout  << _type << " baaaarkk~" << std::endl;
 }
-// std::string Dog::get_type()
-// {
-//     return this->_type;
-// }
+
 Dog::~Dog()
 {
     std::cout  << _type << " is dead ...> <... " << std::endl;

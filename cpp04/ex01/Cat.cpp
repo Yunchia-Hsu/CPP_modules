@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:39:31 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/30 14:37:25 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/30 17:54:21 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,16 @@
 
 Cat::Cat()
 {
-    this->_type = "Cat";
-    std::cout << "Default Cat constructor called. " << std::endl;
+    static int i = 0;
+	this->_type = "Cat";
+	this->_brain = new Brain();
+    std::cout << "Default" << i++ <<  " Cat constructor called. " << std::endl;
+	if (this->_brain == NULL)
+	{
+		perror("Cat brain cannot be allocated memory.");
+		std::cerr << "Exit now" << std::endl;
+		exit(1);
+	}
 }
 
 Cat::Cat(Cat& other)
@@ -39,4 +47,5 @@ void Cat::makeSound() const
 Cat::~Cat()
 {
     std::cout  << _type << " is dead ...> <... " << std::endl;
+	delete _brain;
 }

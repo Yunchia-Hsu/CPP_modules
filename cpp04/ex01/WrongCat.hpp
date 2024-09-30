@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 13:39:20 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/30 14:30:15 by yhsu             ###   ########.fr       */
+/*   Created: 2024/09/30 13:39:05 by yhsu              #+#    #+#             */
+/*   Updated: 2024/09/30 14:32:32 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog :  public Animal
+class WrongCat : virtual public WrongAnimal
 {
-    
+    private:
+        std::string _type;
+
     public:
-        Dog();
-        //Dog(std::string _type);
-        Dog (const Dog& other);
-        Dog& operator = (const Dog& other);
-        void makeSound()const override;
-        //std::string get_type();
-        ~Dog()override;
-
+        WrongCat();
+        //Cat(std::string type);
+        WrongCat (WrongCat& other);
+        WrongCat& operator= (WrongCat& other);
+        void makeSound() const override;
+        ~WrongCat() override;
+        //std::string get_type() const; 
+    
 };
-
 
 #endif

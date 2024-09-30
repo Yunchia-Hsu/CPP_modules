@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:39:20 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/30 14:30:15 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/09/30 15:24:45 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog :  public Animal
 {
-    
+    private:
+		Brain *_brain;
     public:
         Dog();
         //Dog(std::string _type);
