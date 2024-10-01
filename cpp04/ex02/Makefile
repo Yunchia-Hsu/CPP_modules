@@ -1,4 +1,4 @@
-NAME := animal01
+NAME := animal02
 
 SRC := main.cpp\
 		Cat.cpp\

@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 13:39:27 by yhsu              #+#    #+#             */
-/*   Updated: 2024/10/01 15:57:38 by yhsu             ###   ########.fr       */
+/*   Created: 2024/09/30 13:39:05 by yhsu              #+#    #+#             */
+/*   Updated: 2024/10/01 17:11:51 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include "WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongCat : virtual public WrongAnimal
 {
     private:
-		Brain* _brain;
-	
+        std::string _type;
+
     public:
-        Cat();
-        //Cat(std::string type);
-        Cat (Cat& other);
-        Cat& operator= (Cat& other);
-        void makeSound()const override;
-        ~Cat()override;
-		void setIdea(int i, std::string idea);
-		void getIdeas()const ;
+        WrongCat();
+        WrongCat (WrongCat& other);
+        WrongCat& operator= (WrongCat& other);
+        void makeSound() const override;
+        ~WrongCat() override;
+        
     
 };
 

@@ -1,12 +1,7 @@
-NAME := animal01
+NAME := materia
 
 SRC := main.cpp\
-		Cat.cpp\
-		Animal.cpp\
-		Dog.cpp\
-		WrongCat.cpp\
-		WrongAnimal.cpp\
-		Brain.cpp
+		
 		
 OBJS := $(SRC:.cpp=.o)
 

@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 13:39:27 by yhsu              #+#    #+#             */
-/*   Updated: 2024/10/01 15:57:38 by yhsu             ###   ########.fr       */
+/*   Created: 2024/09/30 14:55:02 by yhsu              #+#    #+#             */
+/*   Updated: 2024/10/01 17:11:09 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP 
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public Animal
+class Brain
 {
-    private:
-		Brain* _brain;
-	
-    public:
-        Cat();
-        //Cat(std::string type);
-        Cat (Cat& other);
-        Cat& operator= (Cat& other);
-        void makeSound()const override;
-        ~Cat()override;
+	private:
+		std::string _ideas[100]; 
+
+	public:
+		Brain();
+		Brain(const Brain& other);
+		Brain& operator = (const Brain& other);
+		~Brain();
+
+		const std::string getIdea(int i)const;
+		const std::string *getIdeaAddress(int i) const;
+
 		void setIdea(int i, std::string idea);
-		void getIdeas()const ;
-    
 };
+
+
 
 #endif

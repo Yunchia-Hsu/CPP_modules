@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 13:39:27 by yhsu              #+#    #+#             */
-/*   Updated: 2024/10/01 15:57:38 by yhsu             ###   ########.fr       */
+/*   Created: 2024/09/30 13:39:34 by yhsu              #+#    #+#             */
+/*   Updated: 2024/10/01 17:47:21 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
 
-class Cat : public Animal
+class Animal
 {
-    private:
-		Brain* _brain;
-	
+    protected:
+        std::string _type;
+
     public:
-        Cat();
-        //Cat(std::string type);
-        Cat (Cat& other);
-        Cat& operator= (Cat& other);
-        void makeSound()const override;
-        ~Cat()override;
-		void setIdea(int i, std::string idea);
-		void getIdeas()const ;
+        Animal();
+        Animal(std::string type);
+        Animal (const Animal& other);
+        Animal& operator= (const Animal& other);
+        virtual void makeSound() const = 0;//make it pure virtual function.
+        virtual ~Animal();
+        std::string getType()const;
     
 };
 

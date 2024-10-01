@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 13:39:27 by yhsu              #+#    #+#             */
-/*   Updated: 2024/10/01 15:57:38 by yhsu             ###   ########.fr       */
+/*   Created: 2024/10/01 18:20:43 by yhsu              #+#    #+#             */
+/*   Updated: 2024/10/01 18:26:00 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# ifndef	AMATERIA_HPP
+# define	AMATERIA_HPP
 
-#ifndef CAT_HPP
-# define CAT_HPP
-
-#include <iostream>
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class Cat : public Animal
+class AMateria
 {
-    private:
-		Brain* _brain;
 	
-    public:
-        Cat();
-        //Cat(std::string type);
-        Cat (Cat& other);
-        Cat& operator= (Cat& other);
-        void makeSound()const override;
-        ~Cat()override;
-		void setIdea(int i, std::string idea);
-		void getIdeas()const ;
-    
+
+
+
+	clone() = 0;
+	use(ICharacter& target) = 0;
 };
+
+
 
 #endif
