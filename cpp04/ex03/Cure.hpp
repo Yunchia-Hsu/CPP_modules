@@ -12,12 +12,16 @@
 
 
 #include "AMateria.hpp"
-
+#include "ICharacter.hpp"
+#include "Character.hpp"
 
 class Cure : public AMateria
 {
-	
-
-	//clone() 函數都會返回一個相同類型的新實例。
-	//Cure 類：use() 函數會顯示 "* heals <name>’s wounds *"
+	public:
+		Cure();
+		~Cure();
+		Cure (const Cure& src);
+		Cure & operator = (const Cure& src);
+		AMateria* clone()const;
+		void use(ICharacter& target);
 };

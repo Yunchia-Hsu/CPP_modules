@@ -1,6 +1,6 @@
 NAME := materia
 
-SRC := main.cpp\
+SRC := AMateria Character Cure Ice MateriaSource main
 		
 		
 OBJS := $(SRC:.cpp=.o)

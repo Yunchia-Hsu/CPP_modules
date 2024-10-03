@@ -11,11 +11,16 @@
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-
+#include "ICharacter.hpp"
+#include "Character.hpp"
 
 class Ice : public AMateria
 {
-	
-	//Ice 類：use() 函數會顯示 "* shoots an ice bolt at <name> *"。
-	//clone() 函數都會返回一個相同類型的新實例。
+	public:
+		Ice();
+		~Ice();
+		Ice(const Ice& src);
+		Ice& operator = (const Ice& src);
+		void use(ICharacter& target);
+		AMateria* clone()const;
 };

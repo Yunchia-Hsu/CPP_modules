@@ -10,7 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-這是一個專門用來學習和創建 Materia 的類，它實現了 IMateriaSource 接口。
-learnMateria(AMateria*)：將 Materia 存儲在記憶體中，最多只能記住 4 個。
-createMateria(std::string const & type)：根據類型創建一個新 Materia。
-如果未找到對應類型，則返回 0。
+
+# ifndef	MATERIASOURCE_HPP
+# define	MATERIASOURCE_HPP
+
+#include	<string>
+#include	<iostream>
+#include	"IMateriaSource.hpp"
+
+class MateriaSource : public IMateriaSource
+{
+    private: 
+        AMateria* materia[4];
+        int idx;
+    public:
+		MateriaSource(void);
+		MateriaSource(const MateriaSource& materiaSource);
+		~MateriaSource(void);
+		MateriaSource&	operator=(const MateriaSource& materiaSource);
+		void			learnMateria(AMateria* materia);
+		AMateria*		createMateria(const std::string& type);
+};
+
+#endif

@@ -13,16 +13,24 @@
 # ifndef	AMATERIA_HPP
 # define	AMATERIA_HPP
 
+#include <iostream>
+#include "ICharacter.hpp"
+
 class AMateria
 {
-	
-
-
-
-	clone() = 0;
-	use(ICharacter& target) = 0;
+	protected:
+		std::string _type;
+		
+	public:
+		AMateria();
+		AMateria(AMateria& materia);
+		AMateria(std::string const & type);//物質的類型
+		AMateria& operator = (const AMateria& src);
+		virtual ~AMateria();
+		
+		std::string const & getType() const; //Returns the materia type
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 };
-
-
 
 #endif
