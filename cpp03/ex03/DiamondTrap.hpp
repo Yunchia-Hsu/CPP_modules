@@ -6,7 +6,7 @@
 /*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 19:01:03 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/27 20:49:48 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/10/09 17:14:27 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ ClapTrap::name (parameter of the constructor + "_clap_name" suffix)
 class DiamondTrap: public ScavTrap, public FragTrap
 {
 	public:
+		DiamondTrap();
 		DiamondTrap(std::string name);
 		DiamondTrap(const DiamondTrap& other);
 		DiamondTrap& operator = (const DiamondTrap& other);
@@ -37,9 +38,9 @@ class DiamondTrap: public ScavTrap, public FragTrap
 		using	ScavTrap::attack;
 		void	whoAmI();
 	
-	protected:
+	private:
 		std::string _name;
-		DiamondTrap();
+		
 };
 
 
