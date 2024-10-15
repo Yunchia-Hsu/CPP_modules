@@ -100,7 +100,8 @@ void Character::equip(AMateria* materia)
  
 
 }
-void Character::unequip(int idx)//????
+void Character::unequip(int idx)
+//doesnt delete the material, so if materia are more than 4 , need to reate another pointer to delete the material to prevent memory leak
 {
     if (idx < 0 || idx > 3)
         std::cout << "Unequipped nothing." << std::endl;
