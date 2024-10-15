@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
+/*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 13:39:31 by yhsu              #+#    #+#             */
-/*   Updated: 2024/10/01 15:59:33 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/10/15 12:36:27 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ Cat& Cat::operator= (Cat& other)
     this->_type = other._type;
 	this->_brain = new Brain();
 	
-	if (this->_brain == NULL)
+	if (this->_brain == nullptr)
 	{
 		perror("Cat brain cannot be allocated memory correctly in copy assignment operator.");
 		exit(1);
