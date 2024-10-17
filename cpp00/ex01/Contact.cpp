@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhsu <student.hive.fi>                     +#+  +:+       +#+        */
+/*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 09:53:44 by yhsu              #+#    #+#             */
-/*   Updated: 2024/09/16 17:36:21 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/10/17 13:33:40 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ static std::string read_value(std::string value)
 		{
 			std::cin.clear();
 			std::cout << "Your input is empty. Please try again." << std::endl;
+			exit(0);
+	
 		}	
 
 	}

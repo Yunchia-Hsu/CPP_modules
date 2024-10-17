@@ -27,12 +27,17 @@ int main(int argc, char **argv)
         if (command.empty())
 		{
 			std::cout << "Please enter a command: ADD, SEARCH or EXIT" << std::endl;
-        if (!std::getline(std::cin, command))
-            input_read_fail();
+        	if (!std::getline(std::cin, command))
+            	input_read_fail();
+			
 		}
-		
+	
         if (command == "ADD")
-            pb.add_contact();
+		{
+			//if (command.empty())
+				//std::cout << command <<" is an invalid command, please try again " << std::endl; 	
+			pb.add_contact();
+		} 
         else if (command == "SEARCH")
 		{
 			if (pb.display_contacts() == 1)
@@ -41,7 +46,11 @@ int main(int argc, char **argv)
         else if (command == "EXIT")
             break;
         else    
-            std::cout << command <<" is an invalid command, please try again " << std::endl; 
+        {
+			std::cout << command <<" is an invalid command, please try again " << std::endl;
+			//break;
+		}    
+
 		command = "";
 		std::cout << "Thanks for using the PhoneBook" << std::endl;
 	}
