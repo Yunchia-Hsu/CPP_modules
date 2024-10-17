@@ -10,14 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-Character 是具體類別，實現了 ICharacter 接口。
-它擁有一個最多容納 4 個 Materia 的背包（inventory）。
-當角色裝備 Materia 時，會依次放入背包中。如果背包滿了，則不會裝備更多。
-unequip() 不會刪除 Materia，只是從背包中移除，還要防止記憶體洩漏。
-在角色複製時，背包中的 Materia 需要進行深度拷貝。
-*/
-
 #include "Character.hpp"
 
 Character::Character():_name("no name"), idx(0)
@@ -100,7 +92,8 @@ void Character::equip(AMateria* materia)
  
 
 }
-void Character::unequip(int idx)//????
+void Character::unequip(int idx)
+//doesnt delete the material, so if materia are more than 4 , need to create another pointer to delete the material to prevent memory leaks
 {
     if (idx < 0 || idx > 3)
         std::cout << "Unequipped nothing." << std::endl;
@@ -121,3 +114,11 @@ void Character::use(int idx, ICharacter& target)
     }
     this->inventory[idx]->use(target);//?
 }
+
+/*
+Character 是具體類別，實現了 ICharacter 接口。
+它擁有一個最多容納 4 個 Materia 的背包（inventory）。
+當角色裝備 Materia 時，會依次放入背包中。如果背包滿了，則不會裝備更多。
+unequip() 不會刪除 Materia，只是從背包中移除，還要防止記憶體洩漏。
+在角色複製時，背包中的 Materia 需要進行深度拷貝。
+*/
