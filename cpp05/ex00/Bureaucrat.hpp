@@ -6,26 +6,26 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:36 by yhsu              #+#    #+#             */
-/*   Updated: 2024/11/28 16:02:05 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/11/28 16:06:14 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREACRAT_HPP
-# define BUREACRAT_HPP 
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP 
 
 #include <iostream>
 #include <exception>
 
-class Bureacrat
+class Bureaucrat
 {
 	private:
 		std::string _Name;
 		std::string _Grade;//grade 1 is the highest one and 150 the lowest
 
 	public:
-		Bureacrat();
-		Bureacrat(const Bureacrat& other);
-		~Bureacrat();
+		Bureaucrat();
+		Bureaucrat(const Bureaucrat& other);
+		~Bureaucrat();
 		std::string getName();
 		std::string getGrade();
 };
