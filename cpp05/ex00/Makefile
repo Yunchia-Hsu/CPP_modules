@@ -10,13 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME := bureacrat
+NAME := bureaucrat
 
-SRC := main.cpp
+SRC := main.cpp\
+		Bureaucrat.cpp\
 		
 OBJS := $(SRC:.cpp=.o)
 
-FLAGS := -Wall -Werror -Wextra -std=c++11 -Wshadow
+FLAGS := -Wall -Wextra -Werror -std=c++11
 
 BLUE = \033[0;34m
 GREEN = \033[0;32m

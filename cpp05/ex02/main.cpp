@@ -10,9 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
+
 
 void exception(std::string name, int grade)
 {
@@ -32,44 +34,13 @@ void exception(std::string name, int grade)
 int main () 
 {
 	std::cout<< "\n\033[31mForm TEST \033[0m\n";
-	
-	try
-	{
-		Bureaucrat a("Alice", 24);
-		Bureaucrat m("Mario", 100);
-		Form tax("tax form", 25, 30);
-		Form report("Report card", 60, 80);
-		
-		std::cout<< "\n\033[31mGRADE Form info\033[0m\n";
-		
-		std::cout << report << std::endl;
-		
-		std::cout << tax << std::endl;
-		std::cout<< "\n\033[31mGRADE Alice signs forms\033[0m\n";
-		a.signForm(tax);
-		std::cout << tax << std::endl;
-		a.signForm(report);
-		std::cout << report << std::endl;
-		std::cout<< "\n\033[31mGRADE Mario signs forms\033[0m\n";
-		m.signForm(tax);
-		std::cout << tax << std::endl;
-		m.signForm(report);
-		std::cout << report << std::endl;
-
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "EXCEPTION: "<< e.what() << std::endl;
-	}
-
-	try
-	{
-		Form bill("bill", -4, 100);
-	}
-	catch (std::exception& e)
-	{
-		std::cout << "EXCEPTION: "<< e.what() << std::endl;
-	}
+	//create form
+	//seign form 
+	//check if form is signed and execute
+	ShrubberyCreationForm shrubs("yunchia shrubs");
+	Bureaucrat yunchia("Yunchia", 10);
+	yunchia.signForm(shrubs);
+	yunchia.executeForm(shrubs);
 
   return 0;
 }

@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <exception>
+#include "AForm.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -31,21 +34,25 @@ class Bureaucrat
 		std::string getName() const;
 		int getGrade() const;
 
+		void signForm(Form& form);
 
 		void incrementGrade(int grade);//提升官員等級（數字減小）。
 		void decrementGrade(int grade);//降低官員等級（數字增大）
 
+		void executeForm(AForm const & form);
+		//<bureaucrat> executed <form>
+
 		class GradeTooHighException : public std::exception
 		{
 			const char *what() const throw();//why virtula const char*
-			
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			const  char* what() const throw();
-			
 		};
+
+
 
 };
 

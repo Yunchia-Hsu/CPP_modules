@@ -1,8 +1,8 @@
-NAME := form
+NAME := formsss
 
 SRC := main.cpp\
 		Bureaucrat.cpp\
-		Form.cpp\
+		AForm.cpp\
 		
 OBJS := $(SRC:.cpp=.o)
 
