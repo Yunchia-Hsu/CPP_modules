@@ -27,7 +27,7 @@ public:
     void beSigned(const Bureaucrat& b);
 
     //getter
-    vistual std::string getName() const;
+    virtual std::string getName() const;
     bool getIsSigned();
     int getGradeToSigned() const;
     int getGradeToExecute() const;
