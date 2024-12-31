@@ -13,11 +13,10 @@ class Form
 private:
     const std::string _fName;
     bool isSigned;//init false
-    const int gradeToSign;//官員需要達到的最低等級才能簽署表單 not sure private or public
-    const int gradeToExecute;//官員需要達到的最低等級才能執行表單
+    const int gradeToSign;
+    const int gradeToExecute;
 
 public:
-
     Form();
     Form(std::string name, int gradeToSign, int gradeToExecute);
     Form(const Form& from);

@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:39 by yhsu              #+#    #+#             */
-/*   Updated: 2024/11/28 15:51:38 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/12/31 17:47:22 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main ()
 		std::cout << tax << std::endl;
 		a.signForm(report);
 		std::cout << report << std::endl;
+		
 		std::cout<< "\n\033[31mGRADE Mario signs forms\033[0m\n";
 		m.signForm(tax);
 		std::cout << tax << std::endl;
@@ -62,6 +63,7 @@ int main ()
 		std::cout << "EXCEPTION: "<< e.what() << std::endl;
 	}
 
+	std::cout<< "\n\033[31mBILL Form\033[0m\n";
 	try
 	{
 		Form bill("bill", -4, 100);

@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:56:54 by yhsu              #+#    #+#             */
-/*   Updated: 2024/12/30 16:10:34 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/12/31 18:19:59 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
+class Aform;
+
 class PresidentialPardonForm : public AForm
 {
 public:
@@ -25,7 +27,9 @@ public:
 	PresidentialPardonForm(std::string target);
 	PresidentialPardonForm(const PresidentialPardonForm& from);
 	~PresidentialPardonForm();
-	PresidentialPardonForm& operator= ();		
+	PresidentialPardonForm& operator= (const PresidentialPardonForm& from);		
+
+	void executeAction(const Bureaucrat& b) const;
 };
 
 

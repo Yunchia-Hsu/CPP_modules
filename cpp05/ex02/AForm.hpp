@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/31 18:45:13 by yhsu              #+#    #+#             */
+/*   Updated: 2024/12/31 18:45:14 by yhsu             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef FORM_HPP
 # define FORM_HPP
@@ -36,7 +48,7 @@ public:
     void execute(Bureaucrat const & executor) const;
     //check if the form is signed 
     //check grade to execute is great engouth execute the form or throw exception 
-   void executeAction() const = 0;
+    virtual void executeAction() const = 0;
 
     class GradeTooLowException : public std::exception
     {

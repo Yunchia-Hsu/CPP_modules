@@ -1,4 +1,16 @@
-#include "Form.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/31 17:52:28 by yhsu              #+#    #+#             */
+/*   Updated: 2024/12/31 17:57:42 by yhsu             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "AForm.hpp"
 
 AForm::AForm() : _fName(""), gradeToSign(150), gradeToExecute(150), _target("")
 {    
@@ -38,7 +50,7 @@ void AForm::beSigned(const Bureaucrat& b )
     if (b.getGrade() <= gradeToSign)
         this->isSigned = true;
     else
-        throw Form::GradeTooLowException();
+        throw AForm::GradeTooLowException();
 }
 
 
@@ -94,9 +106,9 @@ const char *AForm::FormNotSigned::what() const throw()
 void AForm::execute(Bureaucrat const & executor) const
 {
     if (this->isSigned == false)
-        throw FormNotSigned;
-    else if(executor.getGrade < this->getGradeToExecute)
-        throw GradeTooLowException;
+        throw AForm::FormNotSigned();
+    else if(executor.getGrade() < this->getGradeToExecute())
+        throw AForm::GradeTooLowException();
     else
         this->executeAction();
 };

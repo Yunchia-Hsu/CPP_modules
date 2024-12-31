@@ -9,7 +9,7 @@ Form::Form(std::string name, int Sign, int Execute): _fName(name), isSigned(fals
 {
     if (Sign < 1 || Execute < 1)
     {
-        throw std::invalid_argument("Grade too high");
+        throw std::invalid_argument("Grade to0o high");
     }
     if (Sign > 150 || Execute > 150)
     {

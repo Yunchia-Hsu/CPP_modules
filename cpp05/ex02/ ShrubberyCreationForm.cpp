@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 14:36:19 by yhsu              #+#    #+#             */
-/*   Updated: 2024/12/30 14:36:20 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/12/31 18:26:17 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ShrubberyCreationForm::ShrubberyCreationForm():AForm("ShrubberyCreationForm", 14
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):AForm("ShrubberyCreationForm", 145, 137, target)
 {
-     std::cout << "ShrubberyCreationForm created" << std::endl;
+    std::cout << "ShrubberyCreationForm created" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& from): AForm(from)
@@ -35,7 +35,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& from)
 {
     if (this != &from)
-        Form::operator=(from);
+        ShrubberyCreationForm::operator=(from);
     return *this;
 }
 
