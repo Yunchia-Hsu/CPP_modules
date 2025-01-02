@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:36 by yhsu              #+#    #+#             */
-/*   Updated: 2024/11/28 16:06:14 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 13:58:43 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <exception>
 #include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -34,7 +34,7 @@ class Bureaucrat
 		std::string getName() const;
 		int getGrade() const;
 
-		void signForm(Form& form);
+		void signForm(AForm& form);
 
 		void incrementGrade(int grade);//提升官員等級（數字減小）。
 		void decrementGrade(int grade);//降低官員等級（數字增大）

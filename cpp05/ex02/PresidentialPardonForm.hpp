@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    PresidentialPardonForm.hpp                        :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:56:54 by yhsu              #+#    #+#             */
-/*   Updated: 2024/12/31 18:19:59 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 14:09:16 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	~PresidentialPardonForm();
 	PresidentialPardonForm& operator= (const PresidentialPardonForm& from);		
 
-	void executeAction(const Bureaucrat& b) const;
+	void executeAction() const;
 };
 
 

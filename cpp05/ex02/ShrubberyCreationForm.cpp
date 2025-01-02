@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    ShrubberyCreationForm.cpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 14:36:19 by yhsu              #+#    #+#             */
-/*   Updated: 2024/12/31 18:26:17 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 15:30:03 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& from):
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-    std::cout << "ShrubberyCreationForm deleted." << std::endl;
+    //std::cout << "ShrubberyCreationForm deleted." << std::endl;
 }
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& from)
@@ -39,22 +39,22 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
     return *this;
 }
 
-void ShrubberyCreationForm::executeAction(const Bureaucrat& b) const
+void ShrubberyCreationForm::executeAction() const
 {
-        std::fstream outfile;
+        std::ofstream outfile;
         outfile.open(this->getTarget()+"_shrubbery");
-        if (!oufile.is_open())
+        if (!outfile.is_open())
         {
-            std::cerr<<"Error: the file failed to open"<< std::endl:
+            std::cerr<<"Error: the file failed to open"<< std::endl;
             return ;
         }
-        oufile <<     * << std::endl;
-        oufile <<    *** << std::endl;
-        oufile <<   ***** << std::endl;
-        oufile <<  ******* << std::endl;
-        oufile << ********* << std::endl;
-        oufile <<    ||| << std::endl;
-        oufile <<    ||| << std::endl;
-        oufile <<    ||| << std::endl;
+        outfile <<"    * "<< std::endl;
+        outfile <<"   *** "<< std::endl;
+        outfile <<"  ***** "<< std::endl;
+        outfile <<" ******* "<< std::endl;
+        outfile <<"********* "<< std::endl;
+        outfile <<"   ||| "<< std::endl;
+        outfile <<"   ||| "<< std::endl;
+
 
 }

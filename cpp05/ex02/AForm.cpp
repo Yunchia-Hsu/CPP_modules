@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 17:52:28 by yhsu              #+#    #+#             */
-/*   Updated: 2024/12/31 17:57:42 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 15:23:33 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 AForm::AForm() : _fName(""), gradeToSign(150), gradeToExecute(150), _target("")
 {    
     this->isSigned = false;
-}
+};
 
 AForm::AForm(std::string name, int Sign, int Execute, std::string target): _fName(name), isSigned(false), gradeToSign(Sign), gradeToExecute(Execute), _target(target)
 {
@@ -29,12 +29,12 @@ AForm::AForm(std::string name, int Sign, int Execute, std::string target): _fNam
     }
 
     //std::cout << this->_fName << " needs to be in grade " << this->gradeToSign << " to sign the form \n << and needs to be in grade "<< this->gradeToExecute << "to execute." << std::endl;
-}
+};
 
-AForm::AForm(const Form& from) : Form (from._fName, from.gradeToSign,from.gradeToExecute, from._target)
+AForm::AForm(const AForm& from) : AForm (from._fName, from.gradeToSign,from.gradeToExecute, from._target)
 {
     *this = from;
-}
+};
 
 AForm& AForm::operator=(const AForm& from)
 {
@@ -107,7 +107,7 @@ void AForm::execute(Bureaucrat const & executor) const
 {
     if (this->isSigned == false)
         throw AForm::FormNotSigned();
-    else if(executor.getGrade() < this->getGradeToExecute())
+    else if(executor.getGrade() > this->getGradeToExecute())
         throw AForm::GradeTooLowException();
     else
         this->executeAction();

@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:33 by yhsu              #+#    #+#             */
-/*   Updated: 2024/11/28 14:56:04 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 15:37:27 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ const char *Bureaucrat::GradeTooHighException::what() const throw()//why virtula
 };
 
 
-
 const  char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return "ERROR: Grade cannot be lower than 150";
@@ -104,7 +103,21 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& b)
     return out;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_Name <<" executed the form: " << form.getName() << " executed."<< std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_Name << " counldn't execute the form: "<<form.getName() << "\n   because " <<e.what() << '\n';
+	}
+	
+}
+
+void Bureaucrat::signForm(AForm& form)
 {
     try
     {

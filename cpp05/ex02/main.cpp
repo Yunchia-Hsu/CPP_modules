@@ -6,41 +6,46 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:39 by yhsu              #+#    #+#             */
-/*   Updated: 2024/11/28 15:51:38 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 15:38:24 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
 
-void exception(std::string name, int grade)
-{
-	try
-	{
-		Bureaucrat me(name, grade);
-		std::cout <<me.getName() <<" is in grade " << me.getGrade() << std::endl;
-		
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout<< "\n";
-}
 
 int main () 
 {
-	std::cout<< "\n\033[31mForm TEST \033[0m\n";
-	//create form
-	//seign form 
-	//check if form is signed and execute
-	ShrubberyCreationForm shrubs("yunchia shrubs");
-	Bureaucrat yunchia("Yunchia", 10);
-	yunchia.signForm(shrubs);
-	yunchia.executeForm(shrubs);
+	std::cout<< "\n\033[31m   FORM TEST \033[0m\n";
+	try 
+	{
+		std::cout<< "\n\033[31m Shruberry Test \033[0m\n";
+		ShrubberyCreationForm shrubs("yunchia shrubs");
+		Bureaucrat yunchia("Yunchia", 140);
+		yunchia.signForm(shrubs);
+		yunchia.executeForm(shrubs);
+
+		std::cout<< "\n\033[31m Presidential Test \033[0m\n";
+		PresidentialPardonForm president("Lumi president ");
+		Bureaucrat Lumi("Lumi", 150);
+		Lumi.signForm(president);
+		Lumi.executeForm(president);
+
+
+		std::cout<< "\n\033[31m Robot Test \033[0m\n";
+		RobotomyRequestForm robot("Yenyen robot");
+		Bureaucrat yen("Yen", 70);
+		yen.signForm(robot);
+		yen.executeForm(robot);
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Error: " <<e.what() << std::endl;
+	}
 
   return 0;
 }

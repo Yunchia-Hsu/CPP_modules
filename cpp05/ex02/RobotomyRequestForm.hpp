@@ -6,10 +6,12 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:45:27 by yhsu              #+#    #+#             */
-/*   Updated: 2024/12/31 18:45:28 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 14:09:01 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
 #include "AForm.hpp"
@@ -20,8 +22,19 @@
 // informs that <target> has been robotomized
 // successfully 50% of the time. Otherwise, 
 // informs that the robotomy failed.
+class AForm;
 
 class RobotomyRequestForm : public AForm
 {
 
+public:
+	RobotomyRequestForm();
+	RobotomyRequestForm(std::string target);
+	RobotomyRequestForm(const RobotomyRequestForm& from );
+	~RobotomyRequestForm();
+	RobotomyRequestForm& operator= (const RobotomyRequestForm& from);
+	void executeAction() const;	
+
 };
+
+#endif

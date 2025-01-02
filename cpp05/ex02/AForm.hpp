@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:45:13 by yhsu              #+#    #+#             */
-/*   Updated: 2024/12/31 18:45:14 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 14:23:02 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #include <iostream>
 #include <exception>
+#include <fstream> 
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
@@ -66,6 +67,6 @@ public:
     };
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& form);
+std::ostream& operator<<(std::ostream& out, const AForm& form);
 
 #endif

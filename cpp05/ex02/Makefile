@@ -3,6 +3,9 @@ NAME := formsss
 SRC := main.cpp\
 		Bureaucrat.cpp\
 		AForm.cpp\
+		ShrubberyCreationForm.cpp \
+		PresidentialPardonForm.cpp \
+		RobotomyRequestForm.cpp \
 		
 OBJS := $(SRC:.cpp=.o)
 
