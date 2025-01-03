@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:56:54 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 14:09:16 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/03 17:28:13 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-class Aform;
+
+class AForm;
 
 class PresidentialPardonForm : public AForm
 {

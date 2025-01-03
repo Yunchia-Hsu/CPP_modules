@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:23:11 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 15:25:28 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/03 15:45:37 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 PresidentialPardonForm& PresidentialPardonForm::operator= (const PresidentialPardonForm& from)
 {
 	if (this != &from)
-		PresidentialPardonForm::operator=(from);
+		PresidentialPardonForm::operator=(from);// Call the base class operator=
 	return *this;
 }
 

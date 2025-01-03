@@ -1,12 +1,6 @@
-NAME := formsss4
+NAME := 
 
-SRC := main.cpp\
-		Bureaucrat.cpp\
-		AForm.cpp\
-		ShrubberyCreationForm.cpp \
-		PresidentialPardonForm.cpp \
-		RobotomyRequestForm.cpp \
-		Intern.cpp\
+SRC := 
 		
 OBJS := $(SRC:.cpp=.o)
 

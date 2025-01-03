@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:39 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 15:38:24 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/03 18:45:20 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 
 
@@ -29,10 +30,8 @@ int main ()
 		yunchia.signForm(shrubs);
 		yunchia.executeForm(shrubs);
 	
-		Intern someRandomIntern;
-		Form* rrf;	            
-		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-
+		
+		
 		// std::cout<< "\n\033[31m Presidential Test \033[0m\n";
 		// PresidentialPardonForm president("Lumi president ");
 		// Bureaucrat Lumi("Lumi", 150);
@@ -50,6 +49,28 @@ int main ()
 	{
 		std::cerr << "Error: " <<e.what() << std::endl;
 	}
+	
+	std::cout<< "\n\033[31m   INTERN TEST \033[0m\n";
+	Intern someRandomIntern;
+	AForm* rrf;	            
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 
+	Intern bestIntern;
+	AForm* best;	            
+	best = bestIntern.makeForm("shrubbery creation", "Bender");
+
+	Intern okIntern;
+	AForm* okay;	            
+	okay = okIntern.makeForm("presidential pardon", "Bender");
+
+	Intern stupidIntern;
+	AForm* random;	            
+	random = stupidIntern.makeForm("bilibala form", "hehehaha");
+
+	delete rrf;
+	delete random;
+	delete best;
+	delete okay;
+	
   return 0;
 }
