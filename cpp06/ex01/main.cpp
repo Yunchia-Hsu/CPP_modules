@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:41:33 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/13 18:16:45 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/14 09:32:52 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int main()
 	std::cout << "original data: " << data.n << std::endl;
 	std::cout << "deserialize data: " <<deserial->n << std::endl;
 	if (data.n == deserial->n)
-		std::cout << "data matched;" << std::endl;
+		std::cout << "data matched." << std::endl;
 	else
-		std::cout << "data NOT matched;" << std::endl;
+		std::cout << "data NOT matched." << std::endl;
 	
 }

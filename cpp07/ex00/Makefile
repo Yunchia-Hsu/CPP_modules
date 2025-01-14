@@ -1,6 +1,6 @@
-NAME := identifier
+NAME := whatever
 
-SRC := main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRC := main.cpp
 		
 OBJS := $(SRC:.cpp=.o)
 

@@ -6,13 +6,18 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:41:27 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/03 20:58:05 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/13 17:24:14 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCALARCONVERTER_HPP
+# define SCALARCONVERTER_HPP
+
 #include <iostream>
 #include <exception>
-#include <>
+#include <cctype> // isdigit
+#include <string>
+#include <iomanip> 
 
 enum e_literals
 {
@@ -21,7 +26,7 @@ enum e_literals
 	Float,
 	Double,
 	None,
-}
+};
 
 class ScalarConverter 
 {
@@ -34,14 +39,25 @@ public:
 	static void convert(std::string number);
 	 
 };
+e_literals getType(std::string input);
 
+int ifisChar(std::string input);
+		
+bool ifisInt(std::string input);
+		
+bool ifisFloat(std::string input);
+		
+bool ifisDouble(std::string input);
+void convertChar(std::string number, char& c, int& i, float& f, double& d);
+bool convertInt(std::string number, char& c, int& i, float& f, double& d);
+bool convertFloat(std::string number, char& c, int& i, float& f, double& d);
+bool convertDouble(std::string number, char& c, int& i, float& f, double& d);
 
-char
-	int
-	float
-	double
-
+void printResult(char& c, int& i, float& f, double& d);
 // std::stof() – convert string to float
 // std::stod() – convert string to double
 // std::atof() – convert a char array to double
 // std::to_string – convert any data type number to string
+
+
+#endif
