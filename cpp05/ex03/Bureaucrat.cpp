@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:33 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 15:37:27 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/17 20:03:58 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat& other)
     *this = other;
 }
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)// copy sth
 {
     //std::cout << "Bureacrat copy assignmentoperator called" << std::endl;
     if (this == &from)

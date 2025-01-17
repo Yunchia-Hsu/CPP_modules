@@ -6,15 +6,16 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:33 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:21:07 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 15:37:27 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat():_Name("")
+Bureaucrat::Bureaucrat()
 {
     this->_Grade = 150;
+    this->_Name = "";
     //std::cout << "decault constructor" << std::endl;
 }
 
@@ -29,9 +30,10 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _Name(name)
         this->_Grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other): _Name(other._Name), _Grade(other._Grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& other)
 {
     //std::cout << "Bureaucrat copy constructor called" << std::endl;
+    *this = other;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)
@@ -41,7 +43,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)
         return *this;
     
     this->_Grade = from._Grade;
-    
+    this->_Name = from._Name;
     return *this;
 }
 
@@ -84,11 +86,10 @@ void Bureaucrat::decrementGrade(int grade)
 }
 
 
-const char *Bureaucrat::GradeTooHighException::what() const throw()
+const char *Bureaucrat::GradeTooHighException::what() const throw()//why virtula const char*
 {
     return "ERROR: Grade can't be higher than 1";
 };
-
 
 
 const  char *Bureaucrat::GradeTooLowException::what() const throw()
@@ -102,7 +103,21 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& b)
     return out;
 }
 
-void Bureaucrat::signForm(Form& form)
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_Name <<" executed the form: " << form.getName() << " executed."<< std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->_Name << " counldn't execute the form: "<<form.getName() << "\n   because " <<e.what() << '\n';
+	}
+	
+}
+
+void Bureaucrat::signForm(AForm& form)
 {
     try
     {

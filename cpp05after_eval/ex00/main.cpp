@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:39 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 19:54:36 by yhsu             ###   ########.fr       */
+/*   Updated: 2024/11/28 15:51:38 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,9 @@ int main ()
 		urcompany.decrementGrade(-4);
 		std::cout << urcompany << std::endl;
 	}
-	catch(std::exception &e)
+	catch(...)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << "exception" << std::endl;
 	}
 
  	std::cout<< "\n\033[31mGRADE TEST 5\033[0m\n";
@@ -104,9 +104,9 @@ int main ()
 		urcompany.decrementGrade('m');
 		std::cout << urcompany << std::endl;
 	}
-	catch(std::exception &e)
+	catch(...)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << "exception" << std::endl;
 	}
 	
 

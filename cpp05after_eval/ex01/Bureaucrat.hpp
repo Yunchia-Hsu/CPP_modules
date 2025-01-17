@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:36 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:18:01 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/17 16:55:26 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Form;
 class Bureaucrat
 {
 	private:
-		const std::string _Name;
+		std::string _Name;
 		int _Grade;//grade 1 is the highest one and 150 the lowest
 
 	public:

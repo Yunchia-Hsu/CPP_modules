@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 12:56:27 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:03:47 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/17 19:32:43 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Intern::Intern(const Intern& from)
 	(void) from;
 	std::cout << "Inter copy constructor called." << std::endl;	
 }
-Intern& Intern::operator=(const Intern& from)// copy sth
+Intern& Intern::operator=(const Intern& from)
 {
 	(void)from; //supress the warning of unused parameter
 	std::cout << "Inter copy assignment called." << std::endl;
@@ -53,13 +53,13 @@ AForm* Intern::makeForm(const std::string formname, const std::string  target)
 	switch (i) 
 	{
 		case 0:
-			newForm = new(std::nothrow)ShrubberyCreationForm(target); // not suer if need nothrow
+			newForm = new ShrubberyCreationForm(target); 
 			break;
 		case 1:
-			newForm = new (std::nothrow)RobotomyRequestForm(target);
+			newForm = new RobotomyRequestForm(target);
 			break;
 		case 2:
-			newForm = new (std::nothrow)PresidentialPardonForm(target);
+			newForm = new PresidentialPardonForm(target);
 			break;
 			
 		default:

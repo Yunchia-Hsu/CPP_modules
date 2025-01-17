@@ -6,16 +6,15 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:33 by yhsu              #+#    #+#             */
-/*   Updated: 2024/11/28 14:56:04 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/17 20:16:57 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat(): _Name("")
 {
     this->_Grade = 150;
-    this->_Name = "";
     //std::cout << "decault constructor" << std::endl;
 }
 
@@ -30,7 +29,17 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _Name(name)
         this->_Grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other)
+std::string Bureaucrat::getName() const
+{
+    return this->_Name;
+}
+
+int Bureaucrat::getGrade() const
+{
+    return this->_Grade;
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat& other):Bureaucrat(other._Name, other._Grade)
 {
     //std::cout << "Bureaucrat copy constructor called" << std::endl;
     *this = other;
@@ -42,8 +51,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)
     if (this == &from)
         return *this;
     
-    this->_Grade = from._Grade;
-    this->_Name = from._Name;
+   this->_Grade = from._Grade;
+   
     return *this;
 }
 
@@ -52,20 +61,12 @@ Bureaucrat :: ~ Bureaucrat()
    // std::cout << "destructor called"<< std::endl;
 }
 
-std::string Bureaucrat::getName() const
-{
-    return this->_Name;
-}
 
-int Bureaucrat::getGrade() const
-{
-    return this->_Grade;
-}
 
 void Bureaucrat::incrementGrade(int grade)
 {   
     if (grade < 0)
-        throw "Grade cannot be a negative number.";
+        throw Bureaucrat::GradeTooHighException();;
     if ((this->_Grade - grade) < 1)
         throw Bureaucrat::GradeTooHighException();
     else
@@ -77,7 +78,7 @@ void Bureaucrat::incrementGrade(int grade)
 void Bureaucrat::decrementGrade(int grade)
 {
     if (grade < 0)
-        throw "Grade cannot be a negative number.";
+        throw Bureaucrat::GradeTooHighException();
     if ((this->_Grade + grade) > 150)
         throw Bureaucrat::GradeTooLowException();
     else
@@ -86,7 +87,7 @@ void Bureaucrat::decrementGrade(int grade)
 }
 
 
-const char *Bureaucrat::GradeTooHighException::what() const throw()//why virtula const char*
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
     return "ERROR: Grade can't be higher than 1";
 };

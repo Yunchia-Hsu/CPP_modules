@@ -24,11 +24,9 @@ Form::Form(const Form& from) : Form (from._fName, from.gradeToSign,from.gradeToE
     *this = from;
 }
 
-/* Operator overloading */
-Form& Form::operator=(const Form& from)// why not copy other things
+Form& Form::operator=(const Form& from)
 {
-    if (this != &from)
-		this->isSigned == from.isSigned;
+    (void)from;
     return *this;
 }
 

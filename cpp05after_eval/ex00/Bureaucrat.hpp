@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:36 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:18:01 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/17 16:41:54 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
-
-class Form;
 
 class Bureaucrat
 {
 	private:
-		const std::string _Name;
+		std::string _Name;
 		int _Grade;//grade 1 is the highest one and 150 the lowest
 
 	public:
@@ -34,7 +31,6 @@ class Bureaucrat
 		std::string getName() const;
 		int getGrade() const;
 
-		void signForm(Form& form);
 
 		void incrementGrade(int grade);//提升官員等級（數字減小）。
 		void decrementGrade(int grade);//降低官員等級（數字增大）

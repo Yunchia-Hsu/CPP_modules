@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:36 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:18:01 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/02 13:58:43 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
 	private:
-		const std::string _Name;
+		std::string _Name;
 		int _Grade;//grade 1 is the highest one and 150 the lowest
 
 	public:
@@ -34,22 +34,25 @@ class Bureaucrat
 		std::string getName() const;
 		int getGrade() const;
 
-		void signForm(Form& form);
+		void signForm(AForm& form);
 
 		void incrementGrade(int grade);//提升官員等級（數字減小）。
 		void decrementGrade(int grade);//降低官員等級（數字增大）
 
+		void executeForm(AForm const & form);
+		//<bureaucrat> executed <form>
+
 		class GradeTooHighException : public std::exception
 		{
-			const char *what() const throw();
-			
+			const char *what() const throw();//why virtula const char*
 		};
 
 		class GradeTooLowException : public std::exception
 		{
 			const  char* what() const throw();
-			
 		};
+
+
 
 };
 

@@ -6,15 +6,16 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:33 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:21:07 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/17 16:51:23 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat():_Name("")
+Bureaucrat::Bureaucrat()
 {
     this->_Grade = 150;
+    this->_Name = "";
     //std::cout << "decault constructor" << std::endl;
 }
 
@@ -29,9 +30,10 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _Name(name)
         this->_Grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other): _Name(other._Name), _Grade(other._Grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& other)
 {
     //std::cout << "Bureaucrat copy constructor called" << std::endl;
+    *this = other;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)
@@ -41,7 +43,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)
         return *this;
     
     this->_Grade = from._Grade;
-    
+    this->_Name = from._Name;
     return *this;
 }
 
@@ -100,18 +102,4 @@ std::ostream& operator<<(std::ostream& out, const Bureaucrat& b)
 {
     out << b.getName() << ", bureaucrat grade " << b.getGrade();
     return out;
-}
-
-void Bureaucrat::signForm(Form& form)
-{
-    try
-    {
-        form.beSigned(*this);
-        std::cout << this->_Name <<  " signed " << form.getName() << std::endl;
-    }
-    catch(std::exception& e)
-    {
-        std::cout << this->_Name << " couldn't sign " << form.getName() 
-            << " because " << e.what() << std::endl;
-    }
 }
