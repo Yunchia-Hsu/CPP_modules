@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 16:37:43 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 16:04:17 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/17 16:21:03 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,95 +14,6 @@
 #include "Array.hpp"
 
 
-// #define MAX_VAL 750
-
-
-// void testForCreateArray() {
-
-// 	std::cout << "---testForCreateArray()---\n";
-// 	std::cout << "-Double Array\n";
-// 	Array<double> doubleArray(4);
-// 	doubleArray[0] = 1.12;
-// 	doubleArray[1] = 2.23;
-// 	doubleArray[2] = 3.34;
-// 	doubleArray[3] = 4.45;
-
-// 	for (unsigned int i = 0; i < 4; i++) {
-// 		std::cout << doubleArray[i] << std::endl;
-// 	}
-
-// 	std::cout << std::endl;
-
-// 	std::cout << "-String Array\n";
-// 	Array<std::string> stringArray(3);
-// 	stringArray[0] = "Hello";
-// 	stringArray[1] = "Can you";
-// 	stringArray[2] = "hear me?";
-
-// 	for (unsigned int i = 0; i < 4; i++) {
-// 		std::cout << stringArray[i] << std::endl;
-// 	}
-
-// }
-
-// int main(int, char**)
-// {
-
-// 	std::cout << "---test from subject---\n";
-//     Array<int> numbers(MAX_VAL); // create an Array<int> with 750 elements
-
-//     int* mirror = new int[MAX_VAL]; // create an int array with 750 elements
-
-//     srand(time(NULL));
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         const int value = rand(); // generate a random int
-//         numbers[i] = value; // store the randm value in the array
-//         mirror[i] = value; // store the randm value in the array, numbers and mirror are the same
-//     }
-//     //SCOPE
-//     {
-//         Array<int> tmp = numbers; // testing = operator
-//         Array<int> test(tmp); // testing copy constructor
-//     }
-
-// 	// check if the mirror and numbers have the same value
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         if (mirror[i] != numbers[i])
-//         {
-//             std::cerr << "didn't save the same value!!" << std::endl;
-//             return 1;
-//         }
-//     }
-//     try
-//     {
-//         numbers[-2] = 0;
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << '\n';
-//     }
-//     try
-//     {
-//         numbers[MAX_VAL] = 0;
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << '\n';
-//     }
-
-// 	// test operator[] is working
-//     for (int i = 0; i < MAX_VAL; i++)
-//     {
-//         numbers[i] = rand();
-//     }
-//     delete [] mirror;
-
-// 	testForCreateArray();
-	
-//     return 0;
-// }
 
 int main ()
 {
@@ -176,7 +87,33 @@ int main ()
 			std::cerr << e.what()<< '\n';
 	}
 
+	std::cout << "\n---test string Array ---\n\n";
+	Array<std::string> stringarr(5);
+	stringarr[0] = "Hello";
+	stringarr[1] = " this";
+	stringarr[2] = " beautiful";
+	stringarr[3] = " World";
+	stringarr[4] = " !!!";
+	
+	for (int i =0; i < 5; i ++)
+	{
+		std::cout << stringarr[i];
+	}
+	
 
+	std::cout << "\n---test double Array ---\n\n";
+	Array<double> doublearr(5);
+	doublearr[0] = 1.11;
+	doublearr[1] = 2.22;
+	doublearr[2] = 3.33;
+	doublearr[3] = 4.44;
+	doublearr[4] = 9.999;
+	
+	for (int i =0; i < 5; i ++)
+	{
+		std::cout << doublearr[i] << '\n';
+	}
+	
 
 	return 0;	
 }
