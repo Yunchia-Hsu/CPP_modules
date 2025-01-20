@@ -6,13 +6,13 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 14:36:19 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 15:30:03 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 15:01:52 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm():AForm("ShrubberyCreationForm", 145, 137, "no target")
+ShrubberyCreationForm::ShrubberyCreationForm():AForm()
 {
     std::cout << "Default ShrubberyCreationForm created" << std::endl;
 }
@@ -22,7 +22,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target):AForm("Shrubber
     std::cout << "ShrubberyCreationForm created" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& from): AForm(from)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& from): AForm(from), target(from.target)
 {
     std::cout << "ShrubberyCreationForm copy constructor called." << std::endl;
 }
@@ -34,8 +34,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& from)
 {
-    if (this != &from)
-        ShrubberyCreationForm::operator=(from);
+     if (this != &from)
+        this->target = from.target;
     return *this;
 }
 

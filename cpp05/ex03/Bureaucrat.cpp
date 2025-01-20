@@ -6,16 +6,15 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:33 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:03:58 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 13:22:15 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat()
+Bureaucrat::Bureaucrat():_Name("")
 {
     this->_Grade = 150;
-    this->_Name = "";
     //std::cout << "decault constructor" << std::endl;
 }
 
@@ -30,7 +29,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _Name(name)
         this->_Grade = grade;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& other)
+Bureaucrat::Bureaucrat(const Bureaucrat& other):Bureaucrat(other._Name, other._Grade)
 {
     //std::cout << "Bureaucrat copy constructor called" << std::endl;
     *this = other;
@@ -43,7 +42,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)// copy sth
         return *this;
     
     this->_Grade = from._Grade;
-    this->_Name = from._Name;
     return *this;
 }
 
@@ -65,7 +63,7 @@ int Bureaucrat::getGrade() const
 void Bureaucrat::incrementGrade(int grade)
 {   
     if (grade < 0)
-        throw "Grade cannot be a negative number.";
+        throw Bureaucrat::GradeTooHighException();
     if ((this->_Grade - grade) < 1)
         throw Bureaucrat::GradeTooHighException();
     else
@@ -77,7 +75,7 @@ void Bureaucrat::incrementGrade(int grade)
 void Bureaucrat::decrementGrade(int grade)
 {
     if (grade < 0)
-        throw "Grade cannot be a negative number.";
+        throw Bureaucrat::GradeTooHighException();
     if ((this->_Grade + grade) > 150)
         throw Bureaucrat::GradeTooLowException();
     else

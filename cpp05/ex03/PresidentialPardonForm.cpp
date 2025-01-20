@@ -6,13 +6,13 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:23:11 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/03 15:45:37 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 14:28:04 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm():AForm()
 {
 	std::cout<< "Default PresidentialPardonForm constructor created" << std::endl;
 }
@@ -22,7 +22,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target):AForm("Presid
 	std::cout << "PresidentialPardonForm created" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& from):AForm(from)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& from):AForm(from),target(from.target)
 {
 	std::cout << "PresidentialPardonForm copy constructor called." << std::endl;
 }
@@ -35,9 +35,10 @@ PresidentialPardonForm::~PresidentialPardonForm()
 PresidentialPardonForm& PresidentialPardonForm::operator= (const PresidentialPardonForm& from)
 {
 	if (this != &from)
-		PresidentialPardonForm::operator=(from);// Call the base class operator=
+		this->target = from.target;
 	return *this;
 }
+
 
 void PresidentialPardonForm::executeAction() const
 {

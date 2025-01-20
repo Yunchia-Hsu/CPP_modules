@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:36 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 13:58:43 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 13:09:54 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AForm;
 class Bureaucrat
 {
 	private:
-		std::string _Name;
+		const std::string _Name;
 		int _Grade;//grade 1 is the highest one and 150 the lowest
 
 	public:
@@ -36,8 +36,8 @@ class Bureaucrat
 
 		void signForm(AForm& form);
 
-		void incrementGrade(int grade);//提升官員等級（數字減小）。
-		void decrementGrade(int grade);//降低官員等級（數字增大）
+		void incrementGrade(int grade);
+		void decrementGrade(int grade);
 
 		void executeForm(AForm const & form);
 		//<bureaucrat> executed <form>
@@ -51,9 +51,6 @@ class Bureaucrat
 		{
 			const  char* what() const throw();
 		};
-
-
-
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);

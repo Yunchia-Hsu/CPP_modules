@@ -6,13 +6,13 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:23:11 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 15:25:28 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 17:56:58 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm():AForm()
 {
 	std::cout<< "Default PresidentialPardonForm constructor created" << std::endl;
 }
@@ -22,7 +22,7 @@ PresidentialPardonForm::PresidentialPardonForm(std::string target):AForm("Presid
 	std::cout << "PresidentialPardonForm created" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& from):AForm(from)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& from):AForm(from),target(from.target)
 {
 	std::cout << "PresidentialPardonForm copy constructor called." << std::endl;
 }
@@ -34,8 +34,16 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm& PresidentialPardonForm::operator= (const PresidentialPardonForm& from)
 {
+	// if (this != &from)
+	// 	this->target = from.target;
+	// return *this;
+
 	if (this != &from)
-		PresidentialPardonForm::operator=(from);
+	{
+		// Placement new operator
+		this->~PresidentialPardonForm();
+		new(this) PresidentialPardonForm(from);
+	}
 	return *this;
 }
 

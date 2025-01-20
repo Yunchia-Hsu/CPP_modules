@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 12:56:27 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:03:47 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 16:41:00 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ AForm* Intern::makeForm(const std::string formname, const std::string  target)
 			newForm = new (std::nothrow)RobotomyRequestForm(target);
 			break;
 		case 2:
-			newForm = new (std::nothrow)PresidentialPardonForm(target);
+			newForm = new (std::nothrow)PresidentialPardonForm(target);//(std::nothrow) dont throw exception only nullpointer 
 			break;
 			
 		default:

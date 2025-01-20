@@ -6,13 +6,13 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:45:20 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 15:25:33 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 14:40:26 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-	RobotomyRequestForm::RobotomyRequestForm():AForm("RobotomyRequestForm", 72, 45, "no target")
+	RobotomyRequestForm::RobotomyRequestForm():AForm()
 	{
 		std::cout << "default Robotomy created" << std::endl;
 	}
@@ -22,7 +22,7 @@
 		std::cout << "RobotomyRequestForm created" << std::endl;		
 	}
 	
-	RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& from): AForm(from)
+	RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& from): AForm(from),target(from.target)
 	{
 		std::cout << "RobotomyRequestForm copy constructor called" << std::endl;	
 	}
@@ -35,7 +35,7 @@
 	RobotomyRequestForm& RobotomyRequestForm::operator= (const RobotomyRequestForm& from)
 	{
 		if (this != &from)
-			RobotomyRequestForm::operator = (from);
+			this->target = from.target;
 		return *this;
 	}
 	

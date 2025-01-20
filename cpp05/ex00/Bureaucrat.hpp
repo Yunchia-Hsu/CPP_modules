@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:36 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:17:35 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 13:10:01 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception
 		{
 			const char *what() const throw();
-			
 		};
 
 		class GradeTooLowException : public std::exception
@@ -46,7 +45,6 @@ class Bureaucrat
 			const  char* what() const throw();
 			
 		};
-
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);

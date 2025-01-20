@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:56:54 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 14:09:16 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 13:52:14 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Aform;
 
 class PresidentialPardonForm : public AForm
 {
+public:
+	std::string target;
 public:
 	PresidentialPardonForm();
 	PresidentialPardonForm(std::string target);

@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 14:36:28 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 14:08:07 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 14:05:41 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ class AForm;
 
 class ShrubberyCreationForm : public AForm
 {
-
+public:
+	std::string target;
 public:    
     ShrubberyCreationForm();
     ShrubberyCreationForm(std::string target);

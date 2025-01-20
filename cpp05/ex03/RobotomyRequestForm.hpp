@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:45:27 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 14:09:01 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 14:28:46 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ class AForm;
 
 class RobotomyRequestForm : public AForm
 {
-
+public:
+	std::string target;
 public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(std::string target);

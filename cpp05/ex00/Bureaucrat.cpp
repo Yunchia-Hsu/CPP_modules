@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:33 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 20:16:57 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/20 13:01:35 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,8 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& from)
     //std::cout << "Bureacrat copy assignmentoperator called" << std::endl;
     if (this == &from)
         return *this;
-    
    this->_Grade = from._Grade;
-   
+     // _Name 是 const，不能賦值，所以不需要對其進行操作。
     return *this;
 }
 
