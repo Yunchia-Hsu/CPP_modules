@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:45:27 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/20 14:28:46 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:40:30 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
+# include <cstdlib>
+# include <ctime>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 

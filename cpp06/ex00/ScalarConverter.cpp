@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 18:41:30 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/13 16:28:49 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/23 16:51:20 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,10 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& from)
 int ifisChar(std::string input)
 {
 	int len = input.length();
+	
 	if (len == 0)
 		return 0;
-	if (len == 1 && (!isdigit(input[0])))
+	else if (len == 1 && (!isdigit(input[0])))
 		return 1;
 	return 10;
 }
@@ -154,6 +155,7 @@ bool convertInt(std::string number, char& c, int& i, float& f, double& d)
 	{
 		i = stoi(number);
 		c = static_cast<char>(i);
+		//std::cout << "c: " << c <<std::endl;
 		f = static_cast<float>(i);
 		d = static_cast<double>(i);
 	}
@@ -201,14 +203,20 @@ bool convertDouble(std::string number, char& c, int& i, float& f, double& d)
 
 void printResult(char& c, int& i, float& f, double& d)
 {
-	if (i >= 0 && i <= 255 && !std::isdigit(c))
-		std::cout << "char: " << c << std::endl;
-	else if (i >= 0 && i <= 255 )
-		std::cout << "non displayble. "<< std::endl;
+	if (i >= 0 && i <= 255 && std::isprint(c))
+		std::cout << "char: '" << c << "'"<< std::endl;
+	else if (i >= 0 && i <= 31 )
+		std::cout << "char: Non displayble "<< std::endl;
+	else
+		std::cout << "char: impossible" << std::endl;
+
+	std::cout << "int: ";
+	if (d >= std::numeric_limits<int>::min() && d <= std::numeric_limits<int>::max())
+		std::cout << i << std::endl;
 	else
 		std::cout << "impossible" << std::endl;
-
-	std::cout << "int: " << i << std::endl;
+		
+		
 
 	if (i == d)
 		std::cout << std::fixed << std::setprecision(1);
@@ -233,7 +241,7 @@ void ScalarConverter::convert(std::string number)
 	e_literals type;
 	
 	type = getType(number);
-	
+	//std::cout << "type: " << type << std::endl;
 	switch (type)
 	{
 		case Char:

@@ -1,12 +1,10 @@
-NAME := convert
+NAME := 
 
-SRC := main.cpp\
-		ScalarConverter.cpp\
-		
+SRC := main.cpp
 		
 OBJS := $(SRC:.cpp=.o)
 
-FLAGS := -Wall -Werror -Wextra -std=c++11
+FLAGS := -Wall -Werror -Wextra -std=c++11 
 
 BLUE = \033[0;34m
 GREEN = \033[0;32m

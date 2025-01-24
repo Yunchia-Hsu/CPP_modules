@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:39 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/20 17:50:31 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:22:27 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,6 @@ int main ()
 		std::cout << "EXCEPTION: "<< e.what() << std::endl;
 	}
 
-	std::cout<< "\n\033[31mAperator TEST \033[0m\n";
-	Form form1("FORM1", 1,10);
-	Form form2("FORM2", 2,20);
-
-	form1 = form2;
-	
-	std::cout << form1.getName() << " grade to sign: "<< form1.getGradeToSigned() <<std::endl;
 
   return 0;
 }

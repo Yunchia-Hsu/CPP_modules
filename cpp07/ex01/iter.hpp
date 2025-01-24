@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 14:32:08 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/14 15:41:56 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/24 15:00:40 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ void	iter(T* address, int len, void (*f) (T&))
 {
 	for (int i = 0; i < len; i++)
 	{
-		
-			(*f)(address[i]);
-			
+			(*f)(address[i]);	
 	}
 };
 template  <typename T>
@@ -38,3 +36,5 @@ void arrprint(T& string)
 };
 
 #endif
+// when the function matches the signature void (*f)(int&) 
+// the function can decay to function pointer

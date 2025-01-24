@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 11:00:21 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/14 14:06:42 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/23 17:41:06 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,12 @@ Base * generate(void)
 		
 	}	
 }
+//dynamic_cast 安全地处理 基类到派生类的转换 to convert a pointer or reference to base class -> into 
+// a pointer or a reference to a derived class
 
+
+ //using dynamic_cast with pointer
+ //no  need to use try cath to catch exception cuz if the conversion fail it returned  nullptr, which is simpler to handle.
 void identify(Base* p)
 {
 	if (dynamic_cast<A*>(p))
@@ -56,7 +61,8 @@ void identify(Base* p)
 	else
 		std::cout << "1rst identify: unknown class" << std::endl; 
 }
-
+//dynamic_cast with references 
+// the conversion may fail and throw a std::bad_cast, so need try catch to catch exception
 void identify(Base& p)
 {
 	try
@@ -97,9 +103,10 @@ int main()
 	Base *p;
 	p = generate();
 	identify(p);
-	identify(*p);// why *p??
+	identify(*p);
 	identify(nullptr);
 	delete p;
+	
 	std::cout<< "\033[31mRandom Test\033[0m\n";
 
 	for(int i = 0; i < 10; i++)

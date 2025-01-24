@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 12:40:20 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 16:06:45 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/24 14:52:56 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ Array<T>::Array(unsigned int number)
 template<typename T>
 Array<T> :: ~Array()
 {
+	std::cout << "destructor called" << std::endl;
 	delete[] this->arr;// deallocate memory for an array of objects
 }
 

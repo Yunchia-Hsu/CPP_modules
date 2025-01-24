@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 16:37:43 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/17 16:21:03 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/24 14:58:29 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main ()
 		// }	
 
 	}
+	delete[] comparearr;
+	
 	std::cout << "\n---test copy constructor---\n";
 	Array<int> copy(intarr); 
 	for (unsigned int i= 0; i < intarr.size(); i++)
@@ -51,8 +53,8 @@ int main ()
 		else
 		{
 			
-			std::cout <<"intarr[i]: "<< intarr[i]<< "  at the address "<< &intarr[i]<< std::endl;
-			std::cout <<"copy[i]: "<< copy[i] << " at the address "<< &copy[i] << std::endl;
+			std::cout <<"intarr[i]: "<< intarr[i]<< "  at the address "<< &intarr[i]<< "content: " << intarr[i]<< std::endl;
+			std::cout <<"copy[i]: "<< copy[i] << " at the address "<< &copy[i] << " content: " << copy[i] << std::endl;
 		}	
 
 	}
@@ -70,8 +72,8 @@ int main ()
 		else
 		{
 			
-			std::cout <<"intarr[i]: " << intarr[i]<< "  at the address "<< &intarr[i]<< std::endl;
-			std::cout <<"tmp[i]: " << tmp[i] << " at the address "<< &tmp[i] << std::endl;
+			std::cout <<"intarr[i]: " << intarr[i]<< "  at the address "<< &intarr[i]<< "content: " << intarr[i]<< std::endl;
+			std::cout <<"tmp[i]: " << tmp[i] << " at the address "<< &tmp[i] << " content: " << tmp[i]  << std::endl;
 		}	
 
 	}

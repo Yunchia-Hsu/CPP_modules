@@ -27,23 +27,12 @@ Form::Form(const Form& from) : Form (from._fName, from.gradeToSign,from.gradeToE
 /* Operator overloading */
 Form& Form::operator=(const Form& from)
 {
-    if (this != &from)
+    if (this == &from)
 	{
-		// Placement new operator
-		this->~Form();
-		new(this) Form(from);//alocate memory at the same memory space
+		return *this;
 	}
-	
+	this->isSigned = from.isSigned;
     return *this;
-
-
-	// if (this != &from)
-	// {
-	// 	// Placement new operator
-	// 	this->~PresidentialPardonForm();
-	// 	new(this) PresidentialPardonForm(from);
-	// }
-	// return *this;
 }
 
 Form::~Form()

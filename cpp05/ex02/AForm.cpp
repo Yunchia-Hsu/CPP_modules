@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 17:52:28 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/02 15:23:33 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:23:47 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,13 @@ AForm::AForm(const AForm& from) : AForm (from._fName, from.gradeToSign,from.grad
 
 AForm& AForm::operator=(const AForm& from)
 {
-    (void)from;
+      if (this == &from)
+	{
+		return *this;
+	}
+	this->isSigned = from.isSigned;
     return *this;
+
 }
 
 AForm::~AForm()

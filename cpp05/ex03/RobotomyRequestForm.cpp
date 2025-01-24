@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:45:20 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/20 14:40:26 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:38:01 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,17 @@
 		return *this;
 	}
 	
+	
+
 	void RobotomyRequestForm::executeAction() const
 	{
 		std::cout << " Bzzzzzzzzz " << std::endl;
+		std::srand(std::time(0));
 		int n = std::rand();
 		if ( n % 2 == 0)
 			std::cout << this->getTarget() << "has been robotomized1"<<std::endl;
 		else 
-			std::cout << this->getTarget() << "robotomy failed\n" << std::endl;
+			std::cout << this->getTarget() << " robotomy failed\n" << std::endl;
 	}
 
 // : Required grades: sign 72, exec 45

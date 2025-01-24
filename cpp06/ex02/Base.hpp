@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:49:33 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/14 10:59:26 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/23 17:21:26 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 class Base
 {
 public:
-	virtual ~Base();
+	virtual ~Base();//ensuring that the correct destructor for derived classes will be called during cleanup 
 };
 
 #endif

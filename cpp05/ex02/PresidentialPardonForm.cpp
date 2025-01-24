@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:23:11 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/20 17:56:58 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:28:32 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,10 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm& PresidentialPardonForm::operator= (const PresidentialPardonForm& from)
 {
-	// if (this != &from)
-	// 	this->target = from.target;
-	// return *this;
-
 	if (this != &from)
-	{
-		// Placement new operator
-		this->~PresidentialPardonForm();
-		new(this) PresidentialPardonForm(from);
-	}
+		this->target = from.target;
 	return *this;
+
 }
 
 void PresidentialPardonForm::executeAction() const

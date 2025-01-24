@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 14:36:19 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/20 18:03:19 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:39:07 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,9 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& from)
 {
-    // if (this != &from)
-    //     this->target = from.target;
-    // return *this;
-
-	if (this != &from)
-	{
-		// Placement new operator
-		this->~ShrubberyCreationForm();
-		new(this) ShrubberyCreationForm(from);
-	}
-	return *this;
+    if (this != &from)
+        this->target = from.target;
+    return *this;
 }
 
 void ShrubberyCreationForm::executeAction() const
@@ -63,6 +55,5 @@ void ShrubberyCreationForm::executeAction() const
         outfile <<"********* "<< std::endl;
         outfile <<"   ||| "<< std::endl;
         outfile <<"   ||| "<< std::endl;
-
 
 }

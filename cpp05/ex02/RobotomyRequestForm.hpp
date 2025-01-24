@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 18:45:27 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/20 13:59:46 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:36:23 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+# include <cstdlib>
+# include <ctime>
 
 // : Required grades: sign 72, exec 45
 // Makes some drilling noises. Then, 

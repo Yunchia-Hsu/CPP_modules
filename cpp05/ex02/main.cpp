@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 11:20:39 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/20 17:58:11 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:33:44 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,6 @@ int main ()
 
 		std::cout<< "\n\033[31m Presidential Test \033[0m\n";
 		PresidentialPardonForm president("Lumi president ");
-
-		std::cout<< "\n\033[31m operator \033[0m\n";
-		PresidentialPardonForm dummy_president("Dummy president ");
-
-		president = dummy_president;
-		std::cout << "Test: " << president.getTarget() << std::endl;
-//////////////////////////////////
-
-		
 		Bureaucrat Lumi("Lumi", 150);
 		Lumi.signForm(president);
 		Lumi.executeForm(president);
@@ -47,7 +38,7 @@ int main ()
 
 		std::cout<< "\n\033[31m Robot Test \033[0m\n";
 		RobotomyRequestForm robot("Yenyen robot");
-		Bureaucrat yen("Yen", 70);
+		Bureaucrat yen("Yen", 10);
 		yen.signForm(robot);
 		yen.executeForm(robot);
 	}

@@ -6,14 +6,14 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 10:49:43 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/14 11:39:58 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/23 17:02:35 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef C_HPP
 #define C_HPP
 #include "Base.hpp"
-class C :public Base
+class C:public Base
 {};
 
 #endif

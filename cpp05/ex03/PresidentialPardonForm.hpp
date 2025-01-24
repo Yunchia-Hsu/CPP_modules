@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 15:56:54 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/20 14:21:30 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/01/22 12:38:15 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 
 #include <iostream>
+# include <cstdlib>
+# include <ctime>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
