@@ -10,10 +10,35 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
+
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <exception>
+
 template<typename T>
 
-easyfind<T>(T , int n)
+typename T::iterator easyfind(T& container , int n)
 {
-	
+	 typename T::iterator it = std::find(container.begin(), container.end(), n);
+     if (it == container.end())
+        throw std::runtime_error("value not found");
+
+    return it;
+}
+
+
+
+
+
+template<typename T>
+typename T::iterator easyfind(T& container, int n)
+{
+    typename T outcome = std::find(container:: begin(). container.end(), n);
+    if (outcome == container.end())
+        throw std::runtime_error("value not found");
 };
 
+#endif
