@@ -1,4 +1,4 @@
-i
+
 
 nt main() {
     MyClass obj1;
