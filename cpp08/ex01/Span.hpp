@@ -19,9 +19,6 @@
   
 class Span
 {
-	private:
-		unsigned int nlimit;//max of n interger
-		std::vector<int> arr;
 		
 	public:
 		Span();
@@ -31,13 +28,16 @@ class Span
 		Span& operator= (const Span& from);
 		
 		void addNumber(int addn);
-		unsigned int shortestSpan(int d);
-		unsigned int longestSpan(int d);
-		
+		int shortestSpan();
+		int longestSpan();
+		void addnumberarr(std::vector<int>::iterator first, std::vector<int>::iterator last);
 
 		void getnlimit(Span& from);
+
+	//private: for test
+		unsigned int nlimit;//max of n interger
+		std::vector<int> arr;
 
 };
 
 #endif
-e

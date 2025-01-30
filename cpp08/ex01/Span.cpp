@@ -48,67 +48,58 @@ void Span::addNumber(int addn)
 		arr.push_back(addn);
 }
 		
-int Span::shortestSpan(int d)
+void Span::addnumberarr(std::vector<int>::iterator first, std::vector<int>::iterator last)
 {
-	//如果容器裡的數字小於 2（包含 0 或 1 筆資料），就沒有辦法計算距離，必須丟出例外。
-	this->arr.sort();
-	unsigned int  deference;
-	for (deference ;it != it.end();it++,)
+	
+	unsigned int totalnumber = this->arr.size() + std::distance(first, last); // dixtance gives the number elements bwt to iterators
+	if (totalnumber > this->nlimit)
 	{
-		if (deference < ())
-	}	
-	return deference; 
-}
-int Span::longestSpan(int d)
-{
-	//如果容器裡的數字小於 2（包含 0 或 1 筆資料），就沒有辦法計算距離，必須丟出例外。
-}
-
-
-/*
-
-
-void	Span::addNumberRange(std::vector<int>::iterator begin,  std::vector<int>::iterator end)
-{
-	unsigned int projTot = this->arr.size() + std::distance(begin, end);
-	if (projTot >= this->N)
-	{
-		std::cerr << "\033[31mNo more space left in the array\033[0m\n";
+		throw std::range_error("The ARRAY doesn't have enough space for the new array.");
 		return;
 	}
-	while (begin != end)
+	else
 	{
-		this->arr.push_back(*begin);
-		begin++;
+		while (first != last)
+		{
+			this->arr.push_back(*first);
+			first++;
+		}
 	}
 }
-
-unsigned	int	Span::shortestSpan( void )
+	
+int Span::longestSpan()
 {
+	//如果容器裡的數字小於 2（包含 0 或 1 筆資料），就沒有辦法計算距離，必須丟出例外。
 	if (this->arr.size() < 2)
-		return 0;
-	unsigned int span;
-	std::vector<int> sortIt = this->arr;
-	std::sort(sortIt.begin(), sortIt.end());
-	std::vector<int>::iterator begin = sortIt.begin();
-	std::vector<int>::iterator end = sortIt.end();
-	unsigned int shortest = std::abs(sortIt[0] - sortIt[1]);
-	for (std::vector<int>::iterator i = begin + 1; i < end; i++)
 	{
-		span = std::abs(*i - *(i - 1));
-		if (span < shortest)
-			shortest = span;
+		throw std::range_error("The ARRAY doesn't have enough elements to calculate the span.");
+		return 1;
 	}
-	return shortest;
+	
+	unsigned int  diff;
+
+	unsigned int smallest = *(std::min_element(arr.begin(), arr.end()));
+	unsigned int greatest = *(std::max_element(arr.begin(), arr.end()));
+	diff = greatest - smallest;
+	return diff; 
 }
 
-unsigned	int	Span::longestSpan( void )
+int Span::shortestSpan()
 {
-	if (this->arr.size() < 2)
-		return 0;
-	auto min = std::min_element(this->arr.begin(), this->arr.end());
-	auto max = std::max_element(this->arr.begin(), this->arr.end());
-	return *max - *min;
+	if (arr.size() < 2)
+	{
+		throw std::range_error("The ARRAY doesn't have enough elements to calculate the span.");
+		//return 1; throw will execite exit after thrown
+	}
+	std::vector<int> copy  = arr;
+	std::sort(copy.begin(), copy.end());
+	int span = arr[1] - arr[0];
+	for (int i = 1 ; i < ((int)arr.size() - 1); i++)
+	{
+		if ((arr[i+1] - arr[i]) < span)
+			span = arr[i+1] - arr[i];
+	}
+	return span;
+	
 }
 
-*/
