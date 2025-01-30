@@ -1,6 +1,9 @@
-NAME := 
 
-SRC := main.cpp
+
+NAME := stack
+
+SRC := main.cpp\
+		
 		
 OBJS := $(SRC:.cpp=.o)
 
@@ -30,4 +33,4 @@ fclean: clean
 
 re: fclean $(NAME)
 
-.PHONE: all clean fclean re
+.PHONE: all clean fclean re MutantStack
