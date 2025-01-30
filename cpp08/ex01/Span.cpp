@@ -15,7 +15,7 @@
 Span::Span()
 {}
 
-Span::Span(unsigned int nlimit):nlimit(nlimit)
+Span::Span(unsigned int N):N(N)
 {}
 
 Span::~Span()
@@ -23,7 +23,7 @@ Span::~Span()
 
 Span::Span(const Span& from)
 {
-	this->nlimit = from.nlimit;
+	this->N = from.N;
 	this->arr = from.arr;
 }
 
@@ -31,7 +31,7 @@ Span::Span(const Span& from)
 Span& Span::operator= (const Span& from)
 {
 	if (this != &from) 
-		this->nlimit = from.nlimit;
+		this->N = from.N;
 		this->arr = from.arr;
 		
 	return *this;
@@ -39,7 +39,7 @@ Span& Span::operator= (const Span& from)
 
 void Span::addNumber(int addn)
 {
-	if (this->nlimit == arr.size())
+	if (this->N == arr.size())
 	{
 		throw std::range_error("The ARRAY is FULL.");
 		return;
@@ -52,7 +52,7 @@ void Span::addnumberarr(std::vector<int>::iterator first, std::vector<int>::iter
 {
 	
 	unsigned int totalnumber = this->arr.size() + std::distance(first, last); // dixtance gives the number elements bwt to iterators
-	if (totalnumber > this->nlimit)
+	if (totalnumber > this->N)
 	{
 		throw std::range_error("The ARRAY doesn't have enough space for the new array.");
 		return;
@@ -93,11 +93,13 @@ int Span::shortestSpan()
 	}
 	std::vector<int> copy  = arr;
 	std::sort(copy.begin(), copy.end());
-	int span = arr[1] - arr[0];
+	
+
+	int span = copy[1] - copy[0];
 	for (int i = 1 ; i < ((int)arr.size() - 1); i++)
 	{
-		if ((arr[i+1] - arr[i]) < span)
-			span = arr[i+1] - arr[i];
+		if ((copy[i+1] - copy[i]) < span)	
+			span = copy[i+1] - copy[i];
 	}
 	return span;
 	
