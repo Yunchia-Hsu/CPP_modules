@@ -47,5 +47,6 @@ public:
     //static void lst_pmerge(int argc, char **argv);
  
 };
+bool input_check(int argc, char **argv);
 
 #endif

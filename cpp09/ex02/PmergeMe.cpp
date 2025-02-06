@@ -187,12 +187,9 @@ bool PmergeMe::vec_pmerge(int argc, char **argv)//3 5 9 7 4
         //std::cout << "最終決定插入位置 targetIndex = " << targetIndex << std::endl;
         s.insert(s.begin() + targetIndex, b[i]);
     }
-    // std::cout << "目前 s 向量: ";
-    // for (int num : s)
-    //     std::cout << num << " ";
-    // std::cout << std::endl;
-    //4.處理剩餘未配對元素：
-    //最後，利用二分搜尋將未配對的元素插入到正確位置。
+   
+//4.處理剩餘未配對元素：
+//最後，利用二分搜尋將未配對的元素插入到正確位置。
     handle_odd_number(argc, argv, s);
    
 
