@@ -42,6 +42,9 @@ public:
     static bool pair(int argc, char **argv);
     static void sort_a(t_intVec& a, t_intVec& s);
     static void add_min_b(t_intVec& s, t_intVec& b);
+
+
+    //static void lst_pmerge(int argc, char **argv);
  
 };
 

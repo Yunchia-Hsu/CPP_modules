@@ -17,10 +17,22 @@ int main (int argc , char *argv[])
         std::cout << "invalig input: ./PmergeMe <numbers to sort>" << std::endl;
         return 1;
     }
+    for (int i = 1 ; i < argc ; i++ )
+    {
+        if (!isdigit(*argv[i]) || std::stoi(argv[i]) < 0)
+        {
+            std::cerr << "Invalid input" << std::endl;
+            return 1;
+        }
+    }
+    std::cout << "Before: ";
+    for (int i = 1 ; i < argc ; i++ )
+        std::cout << argv[i] << " ";
+    
+    std::cout << std::endl; 
     PmergeMe::vec_pmerge(argc, argv);
+    //PmergeMe::lst_pmerge(argc, argv);
     return 0;
-
-
 }
 
 
