@@ -2,6 +2,7 @@ NAME := PmergeMe
 
 SRC := main.cpp\
  	PmergeMe.cpp\
+	vec_util.cpp\
 		
 		
 OBJS := $(SRC:.cpp=.o)
