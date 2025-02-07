@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:26:10 by yhsu              #+#    #+#             */
-/*   Updated: 2025/02/07 17:19:03 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/02/07 17:31:28 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int main (int argc , char *argv[])
     for (int i = 1 ; i < argc ; i++ )
         std::cout << argv[i] << " ";
     std::cout << std::endl; 
-
 
     PmergeMe::vec_pmerge(argc, argv);
     PmergeMe::lst_pmerge(argc, argv);

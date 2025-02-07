@@ -1,5 +1,8 @@
 
 #include "BitcoinExchange.hpp"
+#include <iostream>
+#include <vector>
+#include <algorithm>
 
 BitcoinExchange::BitcoinExchange()
 {
@@ -55,12 +58,15 @@ bool    BitcoinExchange::opentxt(const std::string &filename, std::ofstream &out
 
 void BitcoinExchange::checkdate(std::string  year, std::string  month, std::string day)
 {
-    int y = stoi(year);
+    //std::cout << "y:" << year << " m:"<< month << " d:"<< day<< std::endl;
+	
+	int y = stoi(year);
     int m = stoi(month);
     int d = stoi(day);
 
+	
     if (y < 2009 || y > 2022 ||m < 1 || m > 12 || d > 31 || d < 1)
-        throw 1;
+        throw ;
     if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12)
     {
         if (d > 31)
@@ -139,8 +145,13 @@ void    BitcoinExchange::readsaveInput(char *outfile) //2011-01-03 | 3
 
     
         int pos = line.find('|');
-        if (line[pos] == line[line.size() - 1])
-            throw 1; // no date
+		
+		if (*(line.end()-1) == '|' || line.length() < 11 ) //2001-42-42 |
+		{
+			std::cerr << "Error: bad input" << "=> " << line <<std::endl;
+            continue; // no value
+		}
+		
         int i;
         for (i = 0; i < (int)(line.size()); i++)//delete right space
         {
@@ -153,25 +164,37 @@ void    BitcoinExchange::readsaveInput(char *outfile) //2011-01-03 | 3
             if (line[pos] != ' ' && line[pos] != '|')
                 break;
         }
-        std::string date = line.substr(i, pos);
+
+		
+        std::string date = line.substr(i, pos+1);
         //date = trim(date);//rtrim:去除右邊空格  2011-01-03
+		std::cout <<"1"<< std::endl;
         std::string y = date.substr(0, 4); //2011
+		std::cout <<"2"<< std::endl;
         std::string m = date.substr(5, 2); //01
+		std::cout <<"3"<< std::endl;
         std::string d = date.substr(8, 2); //03
+		std::cout <<"4"<< std::endl;
         double value; 
-        if (line[pos + 1] == '|')
-            throw 1; // no value
-        else
-            value = stod(line.substr(pos + 1, std::string::npos));//npos 「一直到字串結尾」 3
+		std::cout << "line pos + 4: "<< line[pos+4] << std::endl;
+		value = stod(line.substr(pos + 4, std::string::npos));//npos 「一直到字串結尾」 3
+		std::cout <<"5"<< std::endl;
+		
+		//std::cout << "*line.end()  "<< *(line.end()-1) << std::endl;
+       
+
         try
         {
-            checkdate( y, m, d);
-            checkvalue(value);
+           
+			checkdate( y, m, d);
+			checkvalue(value);
+			
+            
         }
         catch (int e)
         {
             if (e == 1)
-                std::cerr << "Error: bad input" << "=> " << line <<std::endl;
+                std::cerr << "Error: baaaad input" << "=> " << line <<std::endl;
             else if (e == 2)
                 std::cerr << "Error: not a positive number." << std::endl;
             else if (e == 3)
@@ -184,8 +207,6 @@ void    BitcoinExchange::readsaveInput(char *outfile) //2011-01-03 | 3
     }
    
 }
-
-
 
 std::map<std::string, double>  BitcoinExchange::parsecsv()
 {
@@ -210,15 +231,21 @@ std::map<std::string, double>  BitcoinExchange::parsecsv()
         {
             csvdate = line.substr(0, pos);
             ratestring = line.substr(pos + 1, std::string::npos);
-            csvrate = std::stod(ratestring);// string to double
+			//std::cout << "ratestring:" << ratestring<< "\n";
+		   if (ratestring!= "\n" || " ")
+		   		csvrate = std::stod(ratestring);// string to double
+			//std::cout << "a ";
             csvmap.insert(std::make_pair(csvdate, csvrate));//write data to map
+			//std::cout << "b ";
         }
         catch (const std::exception &e)
         {
-            throw 1;
+			//std::cout << "c ";
+			throw 1;
         }
     }
     return csvmap;
 }
+
 
 
