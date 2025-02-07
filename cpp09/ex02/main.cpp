@@ -1,7 +1,14 @@
-
-
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/07 10:26:10 by yhsu              #+#    #+#             */
+/*   Updated: 2025/02/07 17:19:03 by yhsu             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <iostream>
 #include <vector>
@@ -32,16 +39,18 @@ int main (int argc , char *argv[])
     if (!input_check(argc, argv))
         return 1;
     
-    std::cout << "Before: ";
+    std::cout << "\033[0;32mBefore: \033[0m";
     for (int i = 1 ; i < argc ; i++ )
         std::cout << argv[i] << " ";
     std::cout << std::endl; 
 
 
     PmergeMe::vec_pmerge(argc, argv);
-    //PmergeMe::lst_pmerge(argc, argv);
+    PmergeMe::lst_pmerge(argc, argv);
+	
     return 0;
 }
+
 
 
 
