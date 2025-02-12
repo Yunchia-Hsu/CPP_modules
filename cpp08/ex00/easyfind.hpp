@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:45:17 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/24 17:09:35 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/02/12 14:50:36 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,5 @@ typename T::iterator easyfind(T& container , int n)
 
 
 
-
-
-template<typename T>
-typename T::iterator easyfind(T& container, int n)
-{
-    typename T outcome = std::find(container:: begin(). container.end(), n);
-    if (outcome == container.end())
-        throw std::runtime_error("value not found");
-};
 
 #endif

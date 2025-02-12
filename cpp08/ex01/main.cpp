@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/12 15:46:15 by yhsu              #+#    #+#             */
+/*   Updated: 2025/02/12 15:46:16 by yhsu             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 
 #include "Span.hpp"
@@ -27,11 +39,11 @@ int main ()
     std::cout << "\033[32mTest add an int array: \033[0m\n";
     std::vector<int> array2 = {11,12,13};
     array.addnumberarr(array2.begin(), array2.end());
-    //  std::cout <<  "span array2: { ";
-	// for (int i = 0; i < 11; i++)
+     std::cout <<  "span array: { ";
+	// for (int i = 0; i < 8; i++)
 	// {
     //     std::cout  << array.arr[i];
-    //     if (i != 10)
+    //     if (i != 7)
     //         std::cout << ", ";
     // }
 	// std::cout <<  " } \n";
@@ -98,7 +110,7 @@ int main ()
 }
 
 //PDF TEST
-//int main()
+// int main()
 // {
 // Span sp = Span(5);
 // sp.addNumber(6);

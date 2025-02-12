@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 16:45:23 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/24 16:45:24 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/02/12 14:51:51 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main ()
 
     try 
     {
-       auto itt =  easyfind(test, 2147483647);
+       auto itt =  easyfind(test, -2147483648);
          std::cout << "value found in it: " << *itt << std::endl;
     }
     catch (const std::exception &e)

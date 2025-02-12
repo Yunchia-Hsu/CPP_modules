@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:21:43 by yhsu              #+#    #+#             */
-/*   Updated: 2025/01/29 19:15:42 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/02/12 14:59:41 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ Span::Span(const Span& from)
 
 Span& Span::operator= (const Span& from)
 {
-	if (this != &from) 
+	if (this != &from)
+	{
 		this->N = from.N;
 		this->arr = from.arr;
-		
+	}
 	return *this;
 }
 
@@ -51,7 +52,7 @@ void Span::addNumber(int addn)
 void Span::addnumberarr(std::vector<int>::iterator first, std::vector<int>::iterator last)
 {
 	
-	unsigned int totalnumber = this->arr.size() + std::distance(first, last); // dixtance gives the number elements bwt to iterators
+	unsigned int totalnumber = this->arr.size() + std::distance(first, last); // distance gives the number elements bwt to iterators
 	if (totalnumber > this->N)
 	{
 		throw std::range_error("The ARRAY doesn't have enough space for the new array.");

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/12 15:46:08 by yhsu              #+#    #+#             */
+/*   Updated: 2025/02/12 15:49:55 by yhsu             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #ifndef MUTANTSTACK_HPP
 # define MUTANTSTACK_HPP
@@ -6,7 +18,7 @@
 #include <stack>
 #include <deque>
 
-template <typename T, typename container = std::deque<T>>  // define tamplate this way so use can use any container 
+template <typename T, typename container = std::deque<T>>  // define tamplate this way so we can use any container 
                                                             //as MutantStack<int, std::vector<int>> m; 
 class MutantStack : public std::stack<T, container>
 {
@@ -18,7 +30,7 @@ class MutantStack : public std::stack<T, container>
         {}
         ~MutantStack()
         {}
-        MutantStack(const MutantStack & from)
+        MutantStack(const MutantStack & from):std::stack<int>(from)
         {
             *this = from;
         };
@@ -51,8 +63,6 @@ class MutantStack : public std::stack<T, container>
         {
             return this->c.end();
         };
-
-    
 
 };
 
