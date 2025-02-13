@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:26:36 by yhsu              #+#    #+#             */
-/*   Updated: 2025/02/07 17:26:28 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/02/13 13:51:42 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ bool PmergeMe::jacobsthalNbr(int n) // 判斷 nbr 是否為 Jacobsthal 數
 
 }
 // 根據當前情況決定下一個“試探”的插入索引
-// nbr：當前參考的數值（通常可以設為主數列長度 tot）
+// n：當前參考的數值（通常可以設為主數列長度 tot）
 // jS：Jacobsthal 序號（外部記錄，會在此函式中更新）
 // tot：主數列當前的元素總數
 int PmergeMe::nextJacobsthalNbr(int n, int &js, int tot)

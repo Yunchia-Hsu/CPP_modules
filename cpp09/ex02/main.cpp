@@ -6,7 +6,7 @@
 /*   By: yhsu <yhsu@student.hive.fi>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 10:26:10 by yhsu              #+#    #+#             */
-/*   Updated: 2025/02/07 17:31:28 by yhsu             ###   ########.fr       */
+/*   Updated: 2025/02/13 13:09:06 by yhsu             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,6 @@ int main (int argc , char *argv[])
 
 
 
-//std::chrono 或其他計時機制
+//./PmergeMe `jot -r 3000 1 100000 | tr '\n' ' '`   for mac 
+//./PmergeMe $(shuf -i 1-100000 -n 3000 | tr '\n' ' ') for linux
+ 

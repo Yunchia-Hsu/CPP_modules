@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <stack>
+#include <cstring>
 #include <string>
 
 
@@ -17,6 +18,8 @@ class RPN
 
     static void calculation(const std::string& arr);     // check static 
 };
+
+bool check_operator(char **argv);
 
 enum e_ops
 {

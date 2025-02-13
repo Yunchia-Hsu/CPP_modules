@@ -15,8 +15,7 @@ RPN::~RPN(){}
 
 void RPN::calculation(const std::string& arr)
 {
-    // for(int j = 0; j < 12; j++)
-    //     std::cout << "arr: "<< arr[j]<< std::endl;
+    
     std::stack<int> stack;
  
     for (int i = 0; arr[i]; i++)//"1 2 * 2 / 2 * 2 4 - +"
