@@ -32,7 +32,7 @@ int main (int argc , char **argv)
 		std::string arg;
 		arg = argv[1];
     	int len = arg.length();
-		if(len > 2 && !check_operator( argv))
+		if( len == 0 || (len == 1 && !isdigit(*argv[1]))||(len > 2 && !check_operator( argv)))
 		{
 			std::cout << "invalid input ./RPN [1 2 +]" << std::endl;
 			return 1;
